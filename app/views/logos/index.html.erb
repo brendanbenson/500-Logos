@@ -1,0 +1,33 @@
+<h1>Listing logos</h1>
+
+<table>
+  <tr>
+    <th>Urlsmall</th>
+    <th>Urllarge</th>
+    <th>Correct</th>
+    <th>Choice1</th>
+    <th>Choice2</th>
+    <th>Choice3</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @logos.each do |logo| %>
+  <tr>
+    <td><%= logo.urlsmall %></td>
+    <td><%= logo.urllarge %></td>
+    <td><%= logo.correct %></td>
+    <td><%= logo.choice1 %></td>
+    <td><%= logo.choice2 %></td>
+    <td><%= logo.choice3 %></td>
+    <td><%= link_to 'Show', logo %></td>
+    <td><%= link_to 'Edit', edit_logo_path(logo) %></td>
+    <td><%= link_to 'Destroy', logo, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Logo', new_logo_path %>
