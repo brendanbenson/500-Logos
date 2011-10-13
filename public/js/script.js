@@ -50,15 +50,14 @@ $(document).ready(function() {
 			choices = shuffle(choices);
 			
 			//Set the choices in the UI
-			$('#choices').hide("slow", function() {
+			$('#choices').fadeOut(300, function() {
 				$('#choices').html('');
 				$.each(choices, function(index, value) {
 					$('#choices').append('<p class="choice">' + value + '</p>');
 				});
 				QUIZ.setclicker();
-				$('#choices').hide().show("slow");
+				$('#choices').hide().fadeIn(300);
 			});
-			this.settimer();
 			this.loadimages();
 		},
 		
@@ -105,26 +104,29 @@ $(document).ready(function() {
 		},
 		
 		loadimages: function() {
-			$('#logo').fadeOut(500, function() {			
+			$('#logo').fadeOut(300, function() {
+				$('#logo').addClass('loading');			
 				var large = new Image();
 				$(large)
 					.load(function() {
 						$('#logo').removeClass('loading');
 						$('#logo').html('');
 						$('#logo').append(this);
-						$('#logo').fadeIn(250);
+						$('#logo').fadeIn(300, function() {
+							QUIZ.settimer();
+						});
 					})
 					.error(function() {
-						
+						//alert("Image load error. Please refresh the page.")
 					})
-					.attr('src', 'img/logos/' + QUIZ.question.urllarge);
+					.attr('src', 'img/logos/' + QUIZ.question.urllarge)
+					.attr('class', 'logoimg');
 			});
 		},
 		
 		endquiz: function() {
 			$('#logo').html('');
 			$('#choices').html('');
-			$('#timer').html('');
 			this.mdd = hex_md5(this.score + sqts);
 			this.sendscore();
 		},
@@ -142,17 +144,14 @@ $(document).ready(function() {
 		},
 		
 		sendsuccess: function(data, status, jqxhr) {
-			//alert("Hello");
-			//alert(data);
-			//alert(status);
-			$('#start').show('slow');
+			$('#start').fadeIn();
 		}
 	};
 	
 	//QUIZ.load("logos.json");
 	
 	$('#start').click(function() {
-		$('#start').hide('slow');
+		$('#start').fadeOut();
 		QUIZ.load("logos.json");
 	});
 });

@@ -264,20 +264,58 @@ header ul {
 	border: 1px dashed #999999;
 }
 
+#game {
+	height: 500px;
+}
+
 .loading {
 	background: url('../img/ajax-loader.gif') center center no-repeat;
 }
 
 #logo {
-	height: 200px;
-	width: 400px;
-	margin: 10px auto;
+	width: 900px;
+	height: 250px;
+	vertical-align: middle;
+	display: table-cell;
+	margin: 20px auto;
 }
 
 #choices {
-	height: 120px;
+	height: 200px;
+	border: 1px solid #FFFFFF;
 }
 
+#timer {
+	height: 30px;
+	border: 1px solid #FFFFFF;
+	font-size: 24px;
+	float: left;
+}
+#score {
+	float: right;
+	font-size: 24px;
+}
+
+#start {
+	cursor: pointer;
+	width: 150px;
+	margin: auto;
+	font-size: 24px;
+}
+
+.choice {
+	line-height: 30px;
+	background: #DDDDDD;
+	border-top: 1px dashed #999999;
+	border-bottom: 1px dashed #999999;
+	text-align: center;
+	cursor: pointer;
+}
+
+.logoimg {
+	display: block;
+	margin: auto;
+}
 
 
 
