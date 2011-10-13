@@ -106,11 +106,14 @@ $(document).ready(function() {
 		
 		loadimages: function() {
 			$('#logo').fadeOut(300, function() {
-				$('#logo').addClass('loading');			
+				$('#logo').addClass('loading');
+				$('#logo').show();			
 				var large = new Image();
 				$(large)
 					.load(function() {
 						$('#logo').removeClass('loading');
+						$('#logo').hide();
+						$('#logo').html('');
 						$('#logo').append(this);
 						$('#logo').fadeIn(300, function() {
 							QUIZ.settimer();

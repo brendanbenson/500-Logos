@@ -11708,3 +11708,47 @@ Started GET "/logos.json" for 127.0.0.1 at 2011-10-12 23:08:47 -0400
   [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
   [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 4
 Completed 200 OK in 61ms (Views: 38.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-12 23:18:00 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 71ms (Views: 70.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-12 23:18:02 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 4
+Completed 200 OK in 61ms (Views: 38.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/scores.json" for 127.0.0.1 at 2011-10-12 23:18:10 -0400
+  Processing by ScoresController#create as JSON
+  Parameters: {"score"=>{"name"=>"Brendan", "score"=>"71509", "mdd"=>"ebf5cece2f309f7acab1bd44aa726dd2"}}
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "scores" ("name", "score", "created_at", "updated_at", "mdd") VALUES ('Brendan', 71509, '2011-10-13 03:18:10.225868', '2011-10-13 03:18:10.225868', 'ebf5cece2f309f7acab1bd44aa726dd2')[0m
+Completed 201 Created in 174ms (Views: 20.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-12 23:20:18 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 67ms (Views: 67.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-12 23:20:19 -0400
+  Processing by LogosController#index as JSON
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos"
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos" ORDER BY random() LIMIT 4[0m
+Completed 200 OK in 61ms (Views: 38.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/scores.json" for 127.0.0.1 at 2011-10-12 23:20:26 -0400
+  Processing by ScoresController#create as JSON
+  Parameters: {"score"=>{"name"=>"Brendan", "score"=>"72100", "mdd"=>"d5f8b870634710343328af0af0c71514"}}
+  [1m[35mAREL (2.0ms)[0m  INSERT INTO "scores" ("name", "score", "created_at", "updated_at", "mdd") VALUES ('Brendan', 72100, '2011-10-13 03:20:27.114104', '2011-10-13 03:20:27.114104', 'd5f8b870634710343328af0af0c71514')
+Completed 201 Created in 183ms (Views: 22.0ms | ActiveRecord: 2.0ms)
