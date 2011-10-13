@@ -1,4 +1,6 @@
 /* Author: Brendan Benson
+	
+TODO: Reorder the events so that the choices do not display until the image displays
 
 */
 
@@ -56,7 +58,6 @@ $(document).ready(function() {
 					$('#choices').append('<p class="choice">' + value + '</p>');
 				});
 				QUIZ.setclicker();
-				$('#choices').hide().fadeIn(300);
 			});
 			this.loadimages();
 		},
@@ -110,11 +111,11 @@ $(document).ready(function() {
 				$(large)
 					.load(function() {
 						$('#logo').removeClass('loading');
-						$('#logo').html('');
 						$('#logo').append(this);
 						$('#logo').fadeIn(300, function() {
 							QUIZ.settimer();
 						});
+						$('#choices').fadeIn(300);
 					})
 					.error(function() {
 						//alert("Image load error. Please refresh the page.")

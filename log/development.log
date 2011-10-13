@@ -11636,3 +11636,75 @@ Started GET "/logos.json" for 127.0.0.1 at 2011-10-12 22:52:42 -0400
   [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
   [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 4
 Completed 200 OK in 59ms (Views: 36.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/scores.json" for 127.0.0.1 at 2011-10-12 23:07:40 -0400
+  Processing by ScoresController#create as JSON
+  Parameters: {"score"=>{"name"=>"Brendan", "score"=>"47500", "mdd"=>"c3476133de57f16785aaedf775836a83"}}
+  [1m[36mAREL (2.0ms)[0m  [1mINSERT INTO "scores" ("name", "score", "created_at", "updated_at", "mdd") VALUES ('Brendan', 47500, '2011-10-13 03:07:40.397848', '2011-10-13 03:07:40.397848', 'c3476133de57f16785aaedf775836a83')[0m
+Completed 201 Created in 207ms (Views: 22.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-12 23:07:41 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 74ms (Views: 74.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-12 23:07:43 -0400
+  Processing by LogosController#index as JSON
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos"
+  [1m[36mLogo Load (0.0ms)[0m  [1mSELECT "logos".* FROM "logos" ORDER BY random() LIMIT 4[0m
+Completed 200 OK in 114ms (Views: 89.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/scores.json" for 127.0.0.1 at 2011-10-12 23:07:50 -0400
+  Processing by ScoresController#create as JSON
+  Parameters: {"score"=>{"name"=>"Brendan", "score"=>"72103", "mdd"=>"5219340b9d46db2a0bbcb8c8b81e202e"}}
+  [1m[35mAREL (2.0ms)[0m  INSERT INTO "scores" ("name", "score", "created_at", "updated_at", "mdd") VALUES ('Brendan', 72103, '2011-10-13 03:07:50.964452', '2011-10-13 03:07:50.964452', '5219340b9d46db2a0bbcb8c8b81e202e')
+Completed 201 Created in 221ms (Views: 23.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-12 23:08:15 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (1.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 70ms (Views: 69.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-12 23:08:16 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 4
+Completed 200 OK in 65ms (Views: 41.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/scores.json" for 127.0.0.1 at 2011-10-12 23:08:24 -0400
+  Processing by ScoresController#create as JSON
+  Parameters: {"score"=>{"name"=>"Brendan", "score"=>"72153", "mdd"=>"e2a5418c95082e2494a1fd0e716bce5c"}}
+  [1m[36mAREL (2.0ms)[0m  [1mINSERT INTO "scores" ("name", "score", "created_at", "updated_at", "mdd") VALUES ('Brendan', 72153, '2011-10-13 03:08:24.163351', '2011-10-13 03:08:24.163351', 'e2a5418c95082e2494a1fd0e716bce5c')[0m
+Completed 201 Created in 167ms (Views: 22.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-12 23:08:26 -0400
+  Processing by LogosController#index as JSON
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos"
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos" ORDER BY random() LIMIT 4[0m
+Completed 200 OK in 95ms (Views: 41.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/scores.json" for 127.0.0.1 at 2011-10-12 23:08:33 -0400
+  Processing by ScoresController#create as JSON
+  Parameters: {"score"=>{"name"=>"Brendan", "score"=>"72615", "mdd"=>"ce623138017cc44153b997466a18b458"}}
+  [1m[35mAREL (2.0ms)[0m  INSERT INTO "scores" ("name", "score", "created_at", "updated_at", "mdd") VALUES ('Brendan', 72615, '2011-10-13 03:08:33.174867', '2011-10-13 03:08:33.174867', 'ce623138017cc44153b997466a18b458')
+Completed 201 Created in 208ms (Views: 21.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-12 23:08:47 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 4
+Completed 200 OK in 61ms (Views: 38.0ms | ActiveRecord: 2.0ms)
