@@ -13079,3 +13079,558 @@ Started POST "/scores.json" for 127.0.0.1 at 2011-10-14 13:41:50 -0400
   Parameters: {"score"=>{"name"=>"Brendan", "score"=>"73084", "mdd"=>"2a89f9f5065aecbee5078e23d954b398"}}
   [1m[35mAREL (3.0ms)[0m  INSERT INTO "scores" ("name", "score", "created_at", "updated_at", "mdd") VALUES ('Brendan', 73084, '2011-10-14 17:41:51.042668', '2011-10-14 17:41:51.042668', '2a89f9f5065aecbee5078e23d954b398')
 Completed 201 Created in 235ms (Views: 31.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/scores/topscores" for 127.0.0.1 at 2011-10-14 13:52:57 -0400
+  Processing by ScoresController#show as HTML
+  Parameters: {"id"=>"topscores"}
+  [1m[36mScore Load (0.0ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."id" = 0 LIMIT 1[0m
+Completed 404 Not Found in 28ms
+
+ActiveRecord::RecordNotFound (Couldn't find Score with ID=topscores):
+  app/controllers/scores_controller.rb:27:in `show'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (54.0ms)
+
+
+Started GET "/scores/topscores" for 127.0.0.1 at 2011-10-14 13:54:46 -0400
+
+NameError (undefined local variable or method `map' for #<ActionDispatch::Routing::Mapper:0x49a5f68>):
+  config/routes.rb:3:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.0ms)
+
+
+Started GET "/scores/topscores" for 127.0.0.1 at 2011-10-14 13:55:44 -0400
+  Processing by ScoresController#topscores as HTML
+  [1m[35mScore Load (8.0ms)[0m  SELECT "scores".* FROM "scores"
+Rendered layouts/_header.html.erb (1.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered scores/topscores.html.erb within layouts/application (274.0ms)
+Completed 200 OK in 352ms (Views: 316.0ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/scores/js/libs/modernizr-2.0.6.min.js" for 127.0.0.1 at 2011-10-14 13:55:45 -0400
+
+ActionController::RoutingError (No route matches "/scores/js/libs/modernizr-2.0.6.min.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/scores/css/style.css" for 127.0.0.1 at 2011-10-14 13:55:45 -0400
+
+ActionController::RoutingError (No route matches "/scores/css/style.css"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (4.0ms)
+
+
+Started GET "/scores/js/plugins.js" for 127.0.0.1 at 2011-10-14 13:55:45 -0400
+
+ActionController::RoutingError (No route matches "/scores/js/plugins.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/scores/js/script.js" for 127.0.0.1 at 2011-10-14 13:55:45 -0400
+
+ActionController::RoutingError (No route matches "/scores/js/script.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/scores/topscores.json" for 127.0.0.1 at 2011-10-14 13:56:21 -0400
+  Processing by ScoresController#topscores as JSON
+  [1m[36mScore Load (8.0ms)[0m  [1mSELECT "scores".* FROM "scores"[0m
+  [1m[35mScore Load (2.0ms)[0m  SELECT "scores".* FROM "scores" ORDER BY score DESC LIMIT 4
+Completed 200 OK in 95ms (Views: 30.0ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/scores/topscores" for 127.0.0.1 at 2011-10-14 13:58:14 -0400
+  Processing by ScoresController#topscores as HTML
+  [1m[36mScore Load (7.0ms)[0m  [1mSELECT "scores".* FROM "scores"[0m
+Rendered layouts/_header.html.erb (1.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered scores/topscores.html.erb within layouts/application (232.0ms)
+Completed 200 OK in 337ms (Views: 276.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-14 13:58:29 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (1.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 70ms (Views: 69.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-14 13:58:32 -0400
+  Processing by LogosController#index as JSON
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos"
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos" ORDER BY random() LIMIT 4[0m
+Completed 200 OK in 138ms (Views: 114.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/scores.json" for 127.0.0.1 at 2011-10-14 13:58:39 -0400
+  Processing by ScoresController#create as JSON
+  Parameters: {"score"=>{"name"=>"Brendan", "score"=>"72642", "mdd"=>"36451b8dcc488be46bf56a526446d0bb"}}
+  [1m[35mAREL (4.0ms)[0m  INSERT INTO "scores" ("name", "score", "created_at", "updated_at", "mdd") VALUES ('Brendan', 72642, '2011-10-14 17:58:39.835877', '2011-10-14 17:58:39.835877', '36451b8dcc488be46bf56a526446d0bb')
+Redirected to http://localhost:3000/scores/148
+Completed 302 Found in 235ms
+
+
+Started GET "/scores/148" for 127.0.0.1 at 2011-10-14 13:58:40 -0400
+  Processing by ScoresController#show as JSON
+  Parameters: {"id"=>"148"}
+  [1m[36mScore Load (1.0ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."id" = 148 LIMIT 1[0m
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered scores/show.html.erb within layouts/application (44.0ms)
+Completed 200 OK in 135ms (Views: 98.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/scores/topscores" for 127.0.0.1 at 2011-10-14 14:03:20 -0400
+  Processing by ScoresController#topscores as HTML
+  [1m[35mScore Load (7.0ms)[0m  SELECT "scores".* FROM "scores"
+Rendered layouts/_header.html.erb (1.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered scores/topscores.html.erb within layouts/application (394.0ms)
+Completed 200 OK in 476ms (Views: 436.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/scores/js/libs/modernizr-2.0.6.min.js" for 127.0.0.1 at 2011-10-14 14:03:21 -0400
+
+ActionController::RoutingError (No route matches "/scores/js/libs/modernizr-2.0.6.min.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/scores/js/plugins.js" for 127.0.0.1 at 2011-10-14 14:03:21 -0400
+
+ActionController::RoutingError (No route matches "/scores/js/plugins.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/scores/js/script.js" for 127.0.0.1 at 2011-10-14 14:03:21 -0400
+
+ActionController::RoutingError (No route matches "/scores/js/script.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/scores/css/style.css" for 127.0.0.1 at 2011-10-14 14:03:21 -0400
+
+ActionController::RoutingError (No route matches "/scores/css/style.css"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/scores/create.json" for 127.0.0.1 at 2011-10-14 14:03:29 -0400
+  Processing by ScoresController#show as JSON
+  Parameters: {"id"=>"create"}
+  [1m[36mScore Load (0.0ms)[0m  [1mSELECT "scores".* FROM "scores" WHERE "scores"."id" = 0 LIMIT 1[0m
+Completed 404 Not Found in 28ms
+
+ActiveRecord::RecordNotFound (Couldn't find Score with ID=create):
+  app/controllers/scores_controller.rb:27:in `show'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (73.0ms)
+
+
+Started GET "/scores.json" for 127.0.0.1 at 2011-10-14 14:03:55 -0400
+  Processing by ScoresController#index as JSON
+  [1m[35mScore Load (7.0ms)[0m  SELECT "scores".* FROM "scores"
+Completed 406 Not Acceptable in 36ms
+
+
+Started GET "/scores.json" for 127.0.0.1 at 2011-10-14 14:04:08 -0400
+  Processing by ScoresController#index as JSON
+  [1m[36mScore Load (9.0ms)[0m  [1mSELECT "scores".* FROM "scores"[0m
+Completed 406 Not Acceptable in 39ms
+
+
+Started GET "/scores.json" for 127.0.0.1 at 2011-10-14 14:04:09 -0400
+  Processing by ScoresController#index as JSON
+  [1m[35mScore Load (7.0ms)[0m  SELECT "scores".* FROM "scores"
+Completed 406 Not Acceptable in 35ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-14 14:04:13 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 97ms (Views: 96.0ms | ActiveRecord: 23.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-14 14:04:14 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 4
+Completed 200 OK in 62ms (Views: 39.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/scores.json" for 127.0.0.1 at 2011-10-14 14:04:19 -0400
+  Processing by ScoresController#create as JSON
+  Parameters: {"score"=>{"name"=>"Brendan", "score"=>"74689", "mdd"=>"877291e0945c9f302d9aac793c045ae2"}}
+  [1m[36mAREL (4.0ms)[0m  [1mINSERT INTO "scores" ("name", "score", "created_at", "updated_at", "mdd") VALUES ('Brendan', 74689, '2011-10-14 18:04:20.156342', '2011-10-14 18:04:20.156342', '877291e0945c9f302d9aac793c045ae2')[0m
+Completed 200 OK in 228ms (Views: 21.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/scores.json" for 127.0.0.1 at 2011-10-14 14:05:13 -0400
+  Processing by ScoresController#index as JSON
+  [1m[35mScore Load (8.0ms)[0m  SELECT "scores".* FROM "scores"
+  [1m[36mScore Load (2.0ms)[0m  [1mSELECT "scores".* FROM "scores" ORDER BY score DESC LIMIT 4[0m
+Completed 200 OK in 97ms (Views: 31.0ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/scores.json" for 127.0.0.1 at 2011-10-14 14:06:43 -0400
+  Processing by ScoresController#index as JSON
+  [1m[35mScore Load (33.0ms)[0m  SELECT "scores".* FROM "scores"
+  [1m[36mScore Load (1.0ms)[0m  [1mSELECT "scores".* FROM "scores" ORDER BY score DESC LIMIT 4[0m
+Completed 200 OK in 97ms (Views: 33.0ms | ActiveRecord: 34.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-14 14:06:45 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (1.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 68ms (Views: 67.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-14 14:06:46 -0400
+  Processing by LogosController#index as JSON
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos"
+  [1m[36mLogo Load (0.0ms)[0m  [1mSELECT "logos".* FROM "logos" ORDER BY random() LIMIT 4[0m
+Completed 200 OK in 90ms (Views: 38.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/scores.json" for 127.0.0.1 at 2011-10-14 14:06:53 -0400
+  Processing by ScoresController#create as JSON
+  Parameters: {"score"=>{"name"=>"Brendan", "score"=>"73535", "mdd"=>"d694edc0ae79327849a62ceba4fc75d0"}}
+  [1m[35mAREL (2.0ms)[0m  INSERT INTO "scores" ("name", "score", "created_at", "updated_at", "mdd") VALUES ('Brendan', 73535, '2011-10-14 18:06:53.182095', '2011-10-14 18:06:53.182095', 'd694edc0ae79327849a62ceba4fc75d0')
+Completed 200 OK in 344ms (Views: 22.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/scores.json" for 127.0.0.1 at 2011-10-14 14:07:04 -0400
+  Processing by ScoresController#index as JSON
+  [1m[36mScore Load (9.0ms)[0m  [1mSELECT "scores".* FROM "scores"[0m
+  [1m[35mScore Load (2.0ms)[0m  SELECT "scores".* FROM "scores" ORDER BY score DESC LIMIT 4
+Completed 200 OK in 70ms (Views: 31.0ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/scores/topscores.json" for 127.0.0.1 at 2011-10-14 14:07:11 -0400
+  Processing by ScoresController#topscores as JSON
+  [1m[36mScore Load (8.0ms)[0m  [1mSELECT "scores".* FROM "scores"[0m
+  [1m[35mScore Load (2.0ms)[0m  SELECT "scores".* FROM "scores" ORDER BY score DESC LIMIT 10
+Completed 200 OK in 74ms (Views: 37.0ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/scores/" for 127.0.0.1 at 2011-10-14 14:08:06 -0400
+  Processing by ScoresController#index as HTML
+  [1m[36mScore Load (7.0ms)[0m  [1mSELECT "scores".* FROM "scores"[0m
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered scores/index.html.erb within layouts/application (340.0ms)
+Completed 200 OK in 418ms (Views: 383.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/scores/js/script.js" for 127.0.0.1 at 2011-10-14 14:08:06 -0400
+
+ActionController::RoutingError (No route matches "/scores/js/script.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/scores/js/plugins.js" for 127.0.0.1 at 2011-10-14 14:08:06 -0400
+
+ActionController::RoutingError (No route matches "/scores/js/plugins.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/scores/css/style.css" for 127.0.0.1 at 2011-10-14 14:08:07 -0400
+
+ActionController::RoutingError (No route matches "/scores/css/style.css"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/scores/js/libs/modernizr-2.0.6.min.js" for 127.0.0.1 at 2011-10-14 14:08:07 -0400
+
+ActionController::RoutingError (No route matches "/scores/js/libs/modernizr-2.0.6.min.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-14 14:08:40 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (1.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 69ms (Views: 69.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-14 14:08:56 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 94ms (Views: 94.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-14 14:08:57 -0400
+  Processing by LogosController#index as JSON
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos"
+  [1m[36mLogo Load (0.0ms)[0m  [1mSELECT "logos".* FROM "logos" ORDER BY random() LIMIT 4[0m
+Completed 200 OK in 63ms (Views: 39.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/scores.json" for 127.0.0.1 at 2011-10-14 14:09:03 -0400
+  Processing by ScoresController#create as JSON
+  Parameters: {"score"=>{"name"=>"Brendan", "score"=>"74024", "mdd"=>"cf0377e2c5e48d065036386dd898db6e"}}
+  [1m[35mAREL (2.0ms)[0m  INSERT INTO "scores" ("name", "score", "created_at", "updated_at", "mdd") VALUES ('Brendan', 74024, '2011-10-14 18:09:03.751563', '2011-10-14 18:09:03.751563', 'cf0377e2c5e48d065036386dd898db6e')
+Completed 200 OK in 221ms (Views: 19.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-14 14:10:37 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 68ms (Views: 68.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-14 14:10:38 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (2.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 4
+Completed 200 OK in 62ms (Views: 38.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/scores/" for 127.0.0.1 at 2011-10-14 14:10:41 -0400
+  Processing by ScoresController#index as HTML
+  [1m[36mScore Load (8.0ms)[0m  [1mSELECT "scores".* FROM "scores"[0m
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered scores/index.html.erb within layouts/application (274.0ms)
+Completed 200 OK in 427ms (Views: 388.0ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/scores/css/style.css" for 127.0.0.1 at 2011-10-14 14:10:42 -0400
+
+ActionController::RoutingError (No route matches "/scores/css/style.css"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/scores/js/plugins.js" for 127.0.0.1 at 2011-10-14 14:10:42 -0400
+
+ActionController::RoutingError (No route matches "/scores/js/plugins.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/scores/js/script.js" for 127.0.0.1 at 2011-10-14 14:10:42 -0400
+
+ActionController::RoutingError (No route matches "/scores/js/script.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/scores/js/libs/modernizr-2.0.6.min.js" for 127.0.0.1 at 2011-10-14 14:10:42 -0400
+
+ActionController::RoutingError (No route matches "/scores/js/libs/modernizr-2.0.6.min.js"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started POST "/scores.json" for 127.0.0.1 at 2011-10-14 14:11:09 -0400
+  Processing by ScoresController#create as JSON
+  Parameters: {"score"=>{"name"=>"Brendan", "score"=>"56803", "mdd"=>"7d16ef72a303e3c49b1e5d8a3cad7b5a"}}
+  [1m[35mAREL (3.0ms)[0m  INSERT INTO "scores" ("name", "score", "created_at", "updated_at", "mdd") VALUES ('Brendan', 56803, '2011-10-14 18:11:09.601761', '2011-10-14 18:11:09.601761', '7d16ef72a303e3c49b1e5d8a3cad7b5a')
+Completed 200 OK in 353ms (Views: 20.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-14 14:12:56 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (4.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 87ms (Views: 86.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-14 14:12:57 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (2.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 4
+Completed 200 OK in 75ms (Views: 43.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/scores.json" for 127.0.0.1 at 2011-10-14 14:13:02 -0400
+  Processing by ScoresController#create as JSON
+  Parameters: {"score"=>{"name"=>"Brendan", "score"=>"75693", "mdd"=>"e383b829f5ee214336065d8aba703713"}}
+  [1m[36mAREL (3.0ms)[0m  [1mINSERT INTO "scores" ("name", "score", "created_at", "updated_at", "mdd") VALUES ('Brendan', 75693, '2011-10-14 18:13:02.883241', '2011-10-14 18:13:02.883241', 'e383b829f5ee214336065d8aba703713')[0m
+  [1m[35mScore Load (3.0ms)[0m  SELECT "scores".* FROM "scores" ORDER BY score DESC LIMIT 10
+Completed 200 OK in 325ms (Views: 26.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-14 14:16:16 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (1.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 72ms (Views: 71.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-14 14:16:17 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 4
+Completed 200 OK in 65ms (Views: 41.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/scores.json" for 127.0.0.1 at 2011-10-14 14:16:24 -0400
+  Processing by ScoresController#create as JSON
+  Parameters: {"score"=>{"name"=>"Brendan", "score"=>"72320", "mdd"=>"76a7f78ac49a81c9fadbfa6cb8834280"}}
+  [1m[36mAREL (4.0ms)[0m  [1mINSERT INTO "scores" ("name", "score", "created_at", "updated_at", "mdd") VALUES ('Brendan', 72320, '2011-10-14 18:16:24.646781', '2011-10-14 18:16:24.646781', '76a7f78ac49a81c9fadbfa6cb8834280')[0m
+  [1m[35mScore Load (1.0ms)[0m  SELECT name, score FROM "scores" ORDER BY score DESC LIMIT 10
+Completed 200 OK in 242ms (Views: 24.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-14 14:18:22 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (1.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 70ms (Views: 70.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-14 14:18:23 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (2.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 4
+Completed 200 OK in 65ms (Views: 40.0ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/scores.json" for 127.0.0.1 at 2011-10-14 14:18:29 -0400
+  Processing by ScoresController#create as JSON
+  Parameters: {"score"=>{"name"=>"Brendan", "score"=>"75184", "mdd"=>"adf2f5f5f09da9cbe3181fdaf9253006"}}
+  [1m[36mAREL (3.0ms)[0m  [1mINSERT INTO "scores" ("name", "score", "created_at", "updated_at", "mdd") VALUES ('Brendan', 75184, '2011-10-14 18:18:29.232907', '2011-10-14 18:18:29.232907', 'adf2f5f5f09da9cbe3181fdaf9253006')[0m
+  [1m[35mScore Load (2.0ms)[0m  SELECT name, score FROM "scores" ORDER BY score DESC LIMIT 10
+Completed 200 OK in 275ms (Views: 22.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-14 14:18:43 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 69ms (Views: 68.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-14 14:18:45 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 4
+Completed 200 OK in 64ms (Views: 39.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/scores.json" for 127.0.0.1 at 2011-10-14 14:18:51 -0400
+  Processing by ScoresController#create as JSON
+  Parameters: {"score"=>{"name"=>"Brendan", "score"=>"74503", "mdd"=>"8099334743f2568dcbef8e1aadb7b917"}}
+  [1m[36mAREL (3.0ms)[0m  [1mINSERT INTO "scores" ("name", "score", "created_at", "updated_at", "mdd") VALUES ('Brendan', 74503, '2011-10-14 18:18:51.250166', '2011-10-14 18:18:51.250166', '8099334743f2568dcbef8e1aadb7b917')[0m
+  [1m[35mScore Load (2.0ms)[0m  SELECT name, score FROM "scores" ORDER BY score DESC LIMIT 10
+Completed 200 OK in 232ms (Views: 22.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-14 14:20:50 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (1.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 68ms (Views: 67.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-14 14:20:51 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 4
+Completed 200 OK in 114ms (Views: 88.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/scores.json" for 127.0.0.1 at 2011-10-14 14:20:59 -0400
+  Processing by ScoresController#create as JSON
+  Parameters: {"score"=>{"name"=>"Brendan", "score"=>"67474", "mdd"=>"57a994369e397f1501172f3d3d8c0c65"}}
+  [1m[36mAREL (2.0ms)[0m  [1mINSERT INTO "scores" ("name", "score", "created_at", "updated_at", "mdd") VALUES ('Brendan', 67474, '2011-10-14 18:20:59.523503', '2011-10-14 18:20:59.523503', '57a994369e397f1501172f3d3d8c0c65')[0m
+  [1m[35mScore Load (1.0ms)[0m  SELECT name, score FROM "scores" ORDER BY score DESC LIMIT 10
+Completed 200 OK in 463ms (Views: 22.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-14 14:21:19 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (1.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 70ms (Views: 69.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-14 14:21:20 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (2.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 4
+Completed 200 OK in 62ms (Views: 39.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/scores.json" for 127.0.0.1 at 2011-10-14 14:21:28 -0400
+  Processing by ScoresController#create as JSON
+  Parameters: {"score"=>{"name"=>"Brendan", "score"=>"71447", "mdd"=>"bb3103d570d1dc5c4ad45e10af3c9cc8"}}
+  [1m[36mAREL (4.0ms)[0m  [1mINSERT INTO "scores" ("name", "score", "created_at", "updated_at", "mdd") VALUES ('Brendan', 71447, '2011-10-14 18:21:28.695171', '2011-10-14 18:21:28.695171', 'bb3103d570d1dc5c4ad45e10af3c9cc8')[0m
+  [1m[35mScore Load (1.0ms)[0m  SELECT name, score FROM "scores" ORDER BY score DESC LIMIT 10
+Completed 200 OK in 259ms (Views: 22.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-14 14:22:00 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 69ms (Views: 69.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-14 14:22:01 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 4
+Completed 200 OK in 61ms (Views: 39.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/scores.json" for 127.0.0.1 at 2011-10-14 14:22:07 -0400
+  Processing by ScoresController#create as JSON
+  Parameters: {"score"=>{"name"=>"Brendan", "score"=>"74235", "mdd"=>"43713b82820e72449f1106c38f47338f"}}
+  [1m[36mAREL (2.0ms)[0m  [1mINSERT INTO "scores" ("name", "score", "created_at", "updated_at", "mdd") VALUES ('Brendan', 74235, '2011-10-14 18:22:07.764406', '2011-10-14 18:22:07.764406', '43713b82820e72449f1106c38f47338f')[0m
+  [1m[35mScore Load (1.0ms)[0m  SELECT name, score FROM "scores" ORDER BY score DESC LIMIT 10
+Completed 200 OK in 240ms (Views: 24.0ms | ActiveRecord: 3.0ms)

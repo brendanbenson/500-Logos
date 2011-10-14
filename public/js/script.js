@@ -160,6 +160,9 @@ $(document).ready(function() {
 		
 		sendsuccess: function(data, status, jqxhr) {
 			console.log(data);
+			$.each(data, function(k, v) {
+				$('#logo').append('<br />' + v.score.name + ': ' + v.score.score);
+			});
 		}
 	};
 	

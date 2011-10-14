@@ -10,6 +10,16 @@ class ScoresController < ApplicationController
       format.json { render :json => Score.find(:all, :limit => 4, :order => 'score DESC')}
     end
   end
+  
+  def topscores
+    @scores = Score.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @scores }
+      format.json { render :json => Score.find(:all, :limit => 10, :order => 'score DESC')}
+    end
+  end
 
   # GET /scores/1
   # GET /scores/1.xml
@@ -47,7 +57,9 @@ class ScoresController < ApplicationController
       if @score.save
         format.html { redirect_to(@score, :notice => 'Score was successfully created.') }
         format.xml  { render :xml => @score, :status => :created, :location => @score }
-        format.json { render :json => @score, :status => :created, :location => @score }
+        # format.json { render :json => @score, :status => :created, :location => @score }
+        #format.json { render :json => { :redirect => "scores/topscores" }  }
+        format.json { render :json => Score.find(:all, :select => "name, score", :limit => 10, :order => 'score DESC') }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @score.errors, :status => :unprocessable_entity }
