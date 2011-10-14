@@ -30,6 +30,7 @@ $(document).ready(function() {
 			this.score = 0;
 			this.interval = null;
 			this.mdd = null;
+			$('#logowrapper').addClass("loading");
 			this.updatescore();
 			$.getJSON(url, null, this.loadsuccess)
 		},
@@ -63,16 +64,18 @@ $(document).ready(function() {
 		},
 		
 		setclicker: function() {
-			$("p").click(function() {
+			$(".choice").click(function() {
 				//Determine if the user has chosen the correct logo
-				QUIZ.check($(this).html());
+				QUIZ.check($(this));
 			});
 		},
 		
-		check: function(choice) {
+		check: function(answer) {
+			choice = answer.html();
 			var correct = choice == this.question.correct;
 			//alert(correct);
 			if (correct) {
+				answer.addClass("correct");
 				window.clearInterval(this.interval);
 				this.updatescore();
 				this.cur++;
@@ -85,7 +88,17 @@ $(document).ready(function() {
 					this.endquiz();
 				}
 			} else {
-				alert("Incorrect!");
+				answer.animate({"background-color": "#FF0000", "color" : "#FFFFFF"}, 1000);
+				this.penalize();
+			}
+		},
+		
+		penalize: function() {
+			$("#timer").css({"color": "#FF0000"});
+			$('#timer').animate({"color" : "#000000"}, 2000);
+			this.timer -= 5000;
+			if (this.timer < 0) {
+				this.timer = 0;
 			}
 		},
 		
@@ -105,14 +118,10 @@ $(document).ready(function() {
 		},
 		
 		loadimages: function() {
-			$('#logo').fadeOut(300, function() {
-				$('#logo').addClass('loading');
-				$('#logo').show();			
+			$('#logo').fadeOut(300, function() {			
 				var large = new Image();
 				$(large)
 					.load(function() {
-						$('#logo').removeClass('loading');
-						$('#logo').hide();
 						$('#logo').html('');
 						$('#logo').append(this);
 						$('#logo').fadeIn(300, function() {
@@ -129,8 +138,11 @@ $(document).ready(function() {
 		},
 		
 		endquiz: function() {
-			$('#logo').html('');
-			$('#choices').html('');
+			$('#logo').fadeOut(300, function() {
+				$('#logo').html("Congratulations! You scored " + QUIZ.score + " points!").fadeIn("slow");
+			});
+			$('#choices').fadeOut(300);
+			$('#logowrapper').removeClass("loading");
 			this.mdd = hex_md5(this.score + sqts);
 			this.sendscore();
 		},
@@ -143,16 +155,13 @@ $(document).ready(function() {
 					mdd: this.mdd
 				}
 			};
-			//$.getJSON("scores.json", score, this.sendsuccess)
 			jQuery.post("scores.json", score, QUIZ.sendsuccess, "json");
 		},
 		
 		sendsuccess: function(data, status, jqxhr) {
-			$('#start').fadeIn();
+			console.log(data);
 		}
 	};
-	
-	//QUIZ.load("logos.json");
 	
 	$('#start').click(function() {
 		$('#start').fadeOut();

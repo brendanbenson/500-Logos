@@ -272,7 +272,7 @@ header ul {
 	background: url('../img/ajax-loader.gif') center center no-repeat;
 }
 
-#logo {
+#logo, #logowrapper {
 	width: 900px;
 	height: 250px;
 	vertical-align: middle;
@@ -280,7 +280,7 @@ header ul {
 	margin: 20px auto;
 }
 
-#choices {
+#choices, #choiceswrapper {
 	height: 200px;
 	border: 1px solid #FFFFFF;
 }
@@ -316,9 +316,6 @@ header ul {
 	display: block;
 	margin: auto;
 }
-
-
-
 
 
 
