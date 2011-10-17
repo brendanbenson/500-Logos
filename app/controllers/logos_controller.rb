@@ -8,7 +8,7 @@ class LogosController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @logos }
-      format.json { render :json => Logo.find(:all, :limit => 4, :order => 'random()') }
+      format.json { render :json => Logo.find(:all, :limit => 1, :order => 'random()') }
     end
   end
 

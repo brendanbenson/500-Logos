@@ -139,12 +139,24 @@ $(document).ready(function() {
 		
 		endquiz: function() {
 			$('#logo').fadeOut(300, function() {
-				$('#logo').html("Congratulations! You scored " + QUIZ.score + " points!").fadeIn("slow");
+				$('#logo').html('');
+				$('#logo').append('<div id="topscores"><p>Congratulations! You scored ' + QUIZ.score + ' points!</p></div>').fadeIn("slow");
 			});
-			$('#choices').fadeOut(300);
+			$('#choices').fadeOut(300, function() {
+				var playagain = '<div id="playagain">Play Again!</div>';
+				$('#choices').html('').append(playagain).fadeIn(300);
+				$('#playagain').click(function() {
+					QUIZ.load("logos.json");
+				});
+			});
 			$('#logowrapper').removeClass("loading");
+			
 			this.mdd = hex_md5(this.score + sqts);
 			this.sendscore();
+		},
+		
+		promptname: function() {
+			
 		},
 		
 		sendscore: function() {
@@ -159,10 +171,15 @@ $(document).ready(function() {
 		},
 		
 		sendsuccess: function(data, status, jqxhr) {
-			console.log(data);
+			//console.log(data);
+			$('#logo').removeClass('loading');
+			var scorestable = '';
+			scorestable += '<div id="scorelist"><table><tr><th>Rank</th><th>Name</th><th>Score</th></tr>';
 			$.each(data, function(k, v) {
-				$('#logo').append('<br />' + v.score.name + ': ' + v.score.score);
+				scorestable += '<tr><td>' + (k + 1) + '</td><td>' + v.score.name + '</td><td>' + v.score.score + '</td></tr>';
 			});
+			scorestable += '</table></div>';
+			$('#topscores').append(scorestable);
 		}
 	};
 	

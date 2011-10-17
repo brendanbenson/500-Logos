@@ -317,7 +317,40 @@ header ul {
 	margin: auto;
 }
 
+#topscores {
+	text-align: center;
+}
 
+#scorelist {
+	width: 300px;
+	margin: auto;
+}
+
+#scorelist table {
+	width: 300px;
+}
+
+#scorelist td, #scorelist th {
+	margin: 20px;
+	border-bottom: 1px dashed #999999;
+}
+
+#playagain {
+	width: 187px;
+	margin: auto;
+	border: 1px dashed #999999;
+	cursor: pointer;
+	text-align: center;
+	padding: 10px;
+	font-weight: bold;
+	text-decoration: underline;
+	background-color: #CCCCCC;
+	color: #0D3349;
+}
+
+#playagain:hover {
+	text-decoration: none;
+}
 
 /* ==|== non-semantic helper classes ========================================
    Please define your styles before this section.
