@@ -166,7 +166,13 @@ $(document).ready(function() {
 		endquiz: function() {
 			$('#logo').fadeOut(300, function() {
 				$('#logo').html('');
-				$('#logo').append('<div id="topscores"><p>Congratulations! You scored ' + QUIZ.score + ' points!</p></div>').fadeIn("slow");
+				$('#logo').append('<div id="topscores"><p>Congratulations! You scored ' + QUIZ.score + ' points!</p></div><div id="scoreform"><form name="highscore"><label>Name: <input type="text" name="user" id="scoreuser" /></label><br /><label>E-mail: <input type="text" name="email" id="scoreemail" /></label><div class="clearfix" /><p id="submitscore" class="bluebutton">Submit</p></form></div>')
+					.fadeIn("slow");
+				$('#submitscore').click(function() {
+					//TODO: Add form validation for sendscore
+					$('#scoreform').remove();
+					QUIZ.sendscore();
+				});
 			});
 			$('#choices').fadeOut(300, function() {
 				var playagain = '<div id="playagain">Play Again!</div>';
@@ -178,7 +184,7 @@ $(document).ready(function() {
 			$('#logowrapper').addClass("loading");
 			
 			this.mdd = hex_md5(this.score + sqts);
-			this.sendscore();
+			//this.sendscore();
 		},
 		
 		promptname: function() {
@@ -188,7 +194,7 @@ $(document).ready(function() {
 		sendscore: function() {
 			var score = {
 				score: {
-					name: "Brendan",
+					name: $('#scoreuser').val(),
 					score: this.score,
 					mdd: this.mdd
 				}
