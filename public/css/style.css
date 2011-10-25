@@ -233,8 +233,8 @@ body {
 header h1 {
 	font: 60px/68px 'ChunkFiveRegular', Arial, sans-serif; 
 	letter-spacing: 2px; 
-	color: #527699;
-	text-shadow: 2px 2px 1px #aabfd4;
+	color: #4079d5;
+	text-shadow: 2px 2px 2px #ffffff;
 	margin: 0 20px;
 }
 
@@ -251,17 +251,38 @@ header ul {
 	font-size: 16px;
 }
 
+.ad {
+	width: 160px;
+	height: 600px;
+	background: #f1f1f1;
+}
+
+.floatleft {
+	float: left;
+}
+
+.floatright {
+	float: right;
+}
+
+.adbottom {
+	width: 468px;
+	height: 60px;
+	background: #f1f1f1;
+	margin: auto;
+}
+
 #container {
 	width: 900px;
 	margin: 20px auto;
 }
 
 #game, #content {
-	width: 800px;
+	width: 500px;
 	margin: 20px auto;
 	background: #FFFFFF;
 	padding: 10px 30px;
-	border: 1px dashed #999999;
+	border: 1px solid #d9d9d9;;
 }
 
 #game {
@@ -296,20 +317,19 @@ header ul {
 	font-size: 24px;
 }
 
-#start {
-	cursor: pointer;
-	width: 150px;
-	margin: auto;
-	font-size: 24px;
-}
-
 .choice {
 	line-height: 30px;
-	background: #DDDDDD;
-	border-top: 1px dashed #999999;
-	border-bottom: 1px dashed #999999;
+	background: #f1f1f1;
+	border: 1px solid #d9d9d9;
 	text-align: center;
 	cursor: pointer;
+	color: #555555;
+	text-shadow: 1px 1px 1px #ffffff;
+}
+
+.choice:hover {
+	color: #222222;
+	border: 1px solid #bbbbbb
 }
 
 .logoimg {
@@ -332,24 +352,27 @@ header ul {
 
 #scorelist td, #scorelist th {
 	margin: 20px;
-	border-bottom: 1px dashed #999999;
+	border-bottom: 1px solid #d9d9d9;
 }
 
-#playagain {
+#playagain, #next, #start {
 	width: 187px;
 	margin: auto;
-	border: 1px dashed #999999;
+	border: 1px solid #4079d5;
 	cursor: pointer;
 	text-align: center;
 	padding: 10px;
 	font-weight: bold;
-	text-decoration: underline;
-	background-color: #CCCCCC;
-	color: #0D3349;
+	text-decoration: none;
+	background-color: #4989f1;
+	color: #ffffff;
+	text-shadow: 1px 1px 1px #333333;
 }
 
-#playagain:hover {
+#playagain:hover, #next:hover, #start:hover {
 	text-decoration: none;
+	border: 1px solid #234377;
+	text-shadow: 1px 1px 1px #151515;
 }
 
 /* ==|== non-semantic helper classes ========================================

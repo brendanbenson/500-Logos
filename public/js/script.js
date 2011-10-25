@@ -25,7 +25,7 @@ $(document).ready(function() {
 		load: function(url) {
 			this.questions = null;
 			this.question = null;
-			this.cur = null;
+			this.cur = 0;
 			this.timer = 0;
 			this.score = 0;
 			this.interval = null;
@@ -42,9 +42,10 @@ $(document).ready(function() {
 		},
 		
 		buildquestion: function() {
+			this.question = this.questions[this.cur].logo;
 			var choices = new Array(this.question.choice1, this.question.choice2, this.question.choice3, this.question.correct);						
 			
-			shuffle = function(o){ //v1.0
+			shuffle = function(o){
 				for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
 				return o;
 			};
@@ -70,31 +71,56 @@ $(document).ready(function() {
 			});
 		},
 		
+		removeclicker: function() {
+			$(".choice").unbind('click');
+		},
+		
 		check: function(answer) {
 			choice = answer.html();
 			var correct = choice == this.question.correct;
-			//alert(correct);
 			if (correct) {
-				answer.addClass("correct");
+				//answer.addClass("correct");
 				window.clearInterval(this.interval);
 				this.updatescore();
+				this.removeclicker();
 				this.cur++;
-				try {
-					this.question = this.questions[this.cur].logo;
-					this.buildquestion();
-				}
-				catch (err) {
-					//No remaining logos - end the quiz
-					this.endquiz();
-				}
+				$('#choices').fadeOut(300);
+				$('#logo').fadeOut(300, function() {
+					QUIZ.showanswer();
+				});
 			} else {
-				answer.animate({"background-color": "#FF0000", "color" : "#FFFFFF"}, 1000);
+				answer.css("text-shadow", "1px 1px 1px #c04131");
+				answer.animate({"background-color": "#d44937", "color" : "#FFFFFF"}, 1000);
 				this.penalize();
 			}
 		},
 		
+		showanswer: function() {
+			$('#choices').html('<p id="next">Next Question</p>');
+			$('#choices').fadeIn(300);
+			var correct = new Image();
+			$(correct)
+				.load(function() {
+					$('#logo').html('');
+					$('#logo').append(this);
+					$('#logo').fadeIn(300);
+				})
+				.error(function() {
+					//alert("Image load error. Please refresh the page.")
+				})
+				.attr('src', 'img/logos/' + QUIZ.question.urllarge)
+				.attr('class', 'logoimg');
+			$('#next').click(function() {
+				if (QUIZ.cur < QUIZ.questions.length) {
+					QUIZ.buildquestion();
+				} else {
+					QUIZ.endquiz();
+				}
+			});
+		},
+		
 		penalize: function() {
-			$("#timer").css({"color": "#FF0000"});
+			$("#timer").css({"color": "#d44937"});
 			$('#timer').animate({"color" : "#000000"}, 2000);
 			this.timer -= 5000;
 			if (this.timer < 0) {
@@ -149,7 +175,7 @@ $(document).ready(function() {
 					QUIZ.load("logos.json");
 				});
 			});
-			$('#logowrapper').removeClass("loading");
+			$('#logowrapper').addClass("loading");
 			
 			this.mdd = hex_md5(this.score + sqts);
 			this.sendscore();
@@ -172,9 +198,8 @@ $(document).ready(function() {
 		
 		sendsuccess: function(data, status, jqxhr) {
 			//console.log(data);
-			$('#logo').removeClass('loading');
-			var scorestable = '';
-			scorestable += '<div id="scorelist"><table><tr><th>Rank</th><th>Name</th><th>Score</th></tr>';
+			$('#logowrapper').removeClass('loading');
+			var scorestable = '<div id="scorelist"><table><tr><th>Rank</th><th>Name</th><th>Score</th></tr>';
 			$.each(data, function(k, v) {
 				scorestable += '<tr><td>' + (k + 1) + '</td><td>' + v.score.name + '</td><td>' + v.score.score + '</td></tr>';
 			});
