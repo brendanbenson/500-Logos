@@ -343,6 +343,7 @@ header ul {
 
 #topscores {
 	text-align: center;
+	background-color: #FFFFFF;
 }
 
 #scorelist {
@@ -360,7 +361,7 @@ header ul {
 }
 
 #scoreform {
-	width: 240px;
+	width: 250px;
 	margin: auto;
 	line-height: 20px;
 }
@@ -387,6 +388,13 @@ header ul {
 	text-decoration: none;
 	border: 1px solid #234377;
 	text-shadow: 1px 1px 1px #151515;
+}
+
+#share {
+	width: 200px;
+	text-align: center;
+	padding: 5px;
+	margin: 10px auto;
 }
 
 /* ==|== non-semantic helper classes ========================================

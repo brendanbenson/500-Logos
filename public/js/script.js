@@ -20,8 +20,6 @@ $(document).ready(function() {
 		
 		interval: null,
 		
-		mdd: null,
-		
 		load: function(url) {
 			this.questions = null;
 			this.question = null;
@@ -29,7 +27,6 @@ $(document).ready(function() {
 			this.timer = 0;
 			this.score = 0;
 			this.interval = null;
-			this.mdd = null;
 			$('#logowrapper').addClass("loading");
 			this.updatescore();
 			$.getJSON(url, null, this.loadsuccess)
@@ -166,12 +163,31 @@ $(document).ready(function() {
 		endquiz: function() {
 			$('#logo').fadeOut(300, function() {
 				$('#logo').html('');
-				$('#logo').append('<div id="topscores"><p>Congratulations! You scored ' + QUIZ.score + ' points!</p></div><div id="scoreform"><form name="highscore"><label>Name: <input type="text" name="user" id="scoreuser" /></label><br /><label>E-mail: <input type="text" name="email" id="scoreemail" /></label><div class="clearfix" /><p id="submitscore" class="bluebutton">Submit</p></form></div>')
+				$('#logo').append('<div id="topscores"><p><strong>Congratulations!</strong> You scored <strong>' + QUIZ.score + '</strong> points!</p><div id="scoreform"><label>Name: <input type="text" name="user" id="scoreuser" /></label><div class="clearfix" /><p id="share" class="choice"><img src="img/facebook.png" /> <strong>Share Your Score!</strong></p></div></div>')
 					.fadeIn("slow");
-				$('#submitscore').click(function() {
-					//TODO: Add form validation for sendscore
-					$('#scoreform').remove();
-					QUIZ.sendscore();
+				$('#share').click(function() {
+					var username = $('#scoreuser').val();
+					if (username == '') {
+						username = 'I';
+					}
+					var desc = username + ' just played "500 Logos" with a score of ' + QUIZ.score + '! See if you can top that!';
+					FB.ui(
+					  {
+					    method: 'feed',
+					    name: '500 Logos',
+					    link: 'http://500logos.com/',
+					    picture: 'http://fbrell.com/f8.jpg',
+					    caption: 'Reference Documentation',
+					    description: desc
+					  },
+					  function(response) {
+					    if (response && response.post_id) {
+					      //alert('Post was published.');
+					    } else {
+					      //alert('Post was not published.');
+					    }
+					  }
+					);
 				});
 			});
 			$('#choices').fadeOut(300, function() {
@@ -183,35 +199,13 @@ $(document).ready(function() {
 			});
 			$('#logowrapper').addClass("loading");
 			
-			this.mdd = hex_md5(this.score + sqts);
+			//this.mdd = hex_md5(this.score + sqts);
 			//this.sendscore();
 		},
 		
 		promptname: function() {
 			
 		},
-		
-		sendscore: function() {
-			var score = {
-				score: {
-					name: $('#scoreuser').val(),
-					score: this.score,
-					mdd: this.mdd
-				}
-			};
-			jQuery.post("scores.json", score, QUIZ.sendsuccess, "json");
-		},
-		
-		sendsuccess: function(data, status, jqxhr) {
-			//console.log(data);
-			$('#logowrapper').removeClass('loading');
-			var scorestable = '<div id="scorelist"><table><tr><th>Rank</th><th>Name</th><th>Score</th></tr>';
-			$.each(data, function(k, v) {
-				scorestable += '<tr><td>' + (k + 1) + '</td><td>' + v.score.name + '</td><td>' + v.score.score + '</td></tr>';
-			});
-			scorestable += '</table></div>';
-			$('#topscores').append(scorestable);
-		}
 	};
 	
 	$('#start').click(function() {
