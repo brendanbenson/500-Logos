@@ -166,12 +166,31 @@ $(document).ready(function() {
 		endquiz: function() {
 			$('#logo').fadeOut(300, function() {
 				$('#logo').html('');
-				$('#logo').append('<div id="topscores"><p>Congratulations! You scored ' + QUIZ.score + ' points!</p></div><div id="scoreform"><form name="highscore"><label>Name: <input type="text" name="user" id="scoreuser" /></label><br /><label>E-mail: <input type="text" name="email" id="scoreemail" /></label><div class="clearfix" /><p id="submitscore" class="bluebutton">Submit</p></form></div>')
+				$('#logo').append('<div id="topscores"><p><strong>Congratulations!</strong> You scored <strong>' + QUIZ.score + '</strong> points!</p><div id="scoreform"><label>Name: <input type="text" name="user" id="scoreuser" /></label><div class="clearfix" /><p id="share" class="choice"><img src="img/facebook.png" /> <strong>Share Your Score!</strong></p></div></div>')
 					.fadeIn("slow");
-				$('#submitscore').click(function() {
-					//TODO: Add form validation for sendscore
-					$('#scoreform').remove();
-					QUIZ.sendscore();
+				$('#share').click(function() {
+					var username = $('#scoreuser').val();
+					if (username == '') {
+						username = 'I';
+					}
+					var desc = username + ' just played "500 Logos" with a score of ' + QUIZ.score + '! See if you can top that!';
+					FB.ui(
+					  {
+					    method: 'feed',
+					    name: '500 Logos',
+					    link: 'http://500logos.com/',
+					    picture: 'http://fbrell.com/f8.jpg',
+					    caption: 'Reference Documentation',
+					    description: desc
+					  },
+					  function(response) {
+					    if (response && response.post_id) {
+					      //alert('Post was published.');
+					    } else {
+					      //alert('Post was not published.');
+					    }
+					  }
+					);
 				});
 			});
 			$('#choices').fadeOut(300, function() {
@@ -183,7 +202,7 @@ $(document).ready(function() {
 			});
 			$('#logowrapper').addClass("loading");
 			
-			this.mdd = hex_md5(this.score + sqts);
+			//this.mdd = hex_md5(this.score + sqts);
 			//this.sendscore();
 		},
 		
