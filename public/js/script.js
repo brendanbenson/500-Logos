@@ -20,8 +20,6 @@ $(document).ready(function() {
 		
 		interval: null,
 		
-		mdd: null,
-		
 		load: function(url) {
 			this.questions = null;
 			this.question = null;
@@ -29,7 +27,6 @@ $(document).ready(function() {
 			this.timer = 0;
 			this.score = 0;
 			this.interval = null;
-			this.mdd = null;
 			$('#logowrapper').addClass("loading");
 			this.updatescore();
 			$.getJSON(url, null, this.loadsuccess)
@@ -209,28 +206,6 @@ $(document).ready(function() {
 		promptname: function() {
 			
 		},
-		
-		sendscore: function() {
-			var score = {
-				score: {
-					name: $('#scoreuser').val(),
-					score: this.score,
-					mdd: this.mdd
-				}
-			};
-			jQuery.post("scores.json", score, QUIZ.sendsuccess, "json");
-		},
-		
-		sendsuccess: function(data, status, jqxhr) {
-			//console.log(data);
-			$('#logowrapper').removeClass('loading');
-			var scorestable = '<div id="scorelist"><table><tr><th>Rank</th><th>Name</th><th>Score</th></tr>';
-			$.each(data, function(k, v) {
-				scorestable += '<tr><td>' + (k + 1) + '</td><td>' + v.score.name + '</td><td>' + v.score.score + '</td></tr>';
-			});
-			scorestable += '</table></div>';
-			$('#topscores').append(scorestable);
-		}
 	};
 	
 	$('#start').click(function() {
