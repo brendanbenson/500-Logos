@@ -20,6 +20,8 @@ $(document).ready(function() {
 		
 		interval: null,
 		
+		reftime: null,
+		
 		load: function(url) {
 			this.questions = null;
 			this.question = null;
@@ -119,25 +121,30 @@ $(document).ready(function() {
 		penalize: function() {
 			$("#timer").css({"color": "#d44937"});
 			$('#timer').animate({"color" : "#000000"}, 2000);
-			this.timer -= 5000;
-			if (this.timer < 0) {
-				this.timer = 0;
-			}
+			QUIZ.reftime -= 2000;
 		},
 		
 		updatescore: function() {
 			this.score += this.timer;
-			$('#score').html('Score: ' + this.score);
+			$('#score').html('Score: ' + this.formattime(this.score) + 's');
 		},
 		
 		settimer: function() {
-			this.timer = 20000;
-			this.interval = window.setInterval(QUIZ.decrementtime, 10);
+			this.timer = 0;
+			var d = new Date();
+			this.reftime = d.getTime();
+			this.interval = window.setInterval(QUIZ.addtime, 10);
 		},
 		
-		decrementtime: function() {
-			QUIZ.timer -= Math.ceil(QUIZ.timer / 1000);
-			$('#timer').html(QUIZ.timer);
+		addtime: function() {
+			//QUIZ.timer -= Math.ceil(QUIZ.timer / 1000);
+			var d = new Date();
+			QUIZ.timer = d.getTime() - QUIZ.reftime;
+			$('#timer').html(QUIZ.formattime(QUIZ.timer));
+		},
+		
+		formattime: function(t) {
+			return (t / 1000).toFixed(2);
 		},
 		
 		loadimages: function() {
@@ -163,21 +170,21 @@ $(document).ready(function() {
 		endquiz: function() {
 			$('#logo').fadeOut(300, function() {
 				$('#logo').html('');
-				$('#logo').append('<div id="topscores"><p><strong>Congratulations!</strong> You scored <strong>' + QUIZ.score + '</strong> points!</p><div id="scoreform"><label>Name: <input type="text" name="user" id="scoreuser" /></label><div class="clearfix" /><p id="share" class="choice"><img src="img/facebook.png" /> <strong>Share Your Score!</strong></p></div></div>')
+				$('#logo').append('<div id="topscores"><p><strong>Congratulations!</strong> Your time was <strong>' + QUIZ.formattime(QUIZ.score) + '</strong> seconds!</p><div id="scoreform"><label>Name: <input type="text" name="user" id="scoreuser" /></label><div class="clearfix" /><p id="share" class="choice"><img src="img/facebook.png" /> <strong>Share Your Score!</strong></p></div></div>')
 					.fadeIn("slow");
 				$('#share').click(function() {
 					var username = $('#scoreuser').val();
 					if (username == '') {
 						username = 'I';
 					}
-					var desc = username + ' just played "500 Logos" with a score of ' + QUIZ.score + '! See if you can top that!';
+					var desc = username + ' just finished the "500 Logos" game with a time of ' + QUIZ.score + ' seconds! See if you can top that!';
 					FB.ui(
 					  {
 					    method: 'feed',
 					    name: '500 Logos',
 					    link: 'http://500logos.com/',
 					    picture: 'http://fbrell.com/f8.jpg',
-					    caption: 'Reference Documentation',
+					    caption: 'Test your knowledge of corporate logos!',
 					    description: desc
 					  },
 					  function(response) {

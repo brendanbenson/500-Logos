@@ -20257,3 +20257,552 @@ Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:04:55 -0400
   [1m[36mLogo Load (6.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
   [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
 Completed 200 OK in 81ms (Views: 50.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 22:16:01 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 75ms (Views: 74.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:16:03 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 58ms (Views: 34.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 22:21:07 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 70ms (Views: 70.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:21:09 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 99ms (Views: 67.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:21:18 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 58ms (Views: 35.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 22:28:47 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 69ms (Views: 68.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:28:49 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (2.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 64ms (Views: 39.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 22:29:51 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (3.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 87ms (Views: 87.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:29:54 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 62ms (Views: 37.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 22:30:09 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 82ms (Views: 80.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:30:11 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 60ms (Views: 36.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 22:31:21 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 71ms (Views: 71.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:31:26 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 64ms (Views: 39.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 22:32:33 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 71ms (Views: 71.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:32:34 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 65ms (Views: 40.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 22:36:40 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 73ms (Views: 72.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:36:41 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (3.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 132ms (Views: 44.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 22:37:05 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (37.0ms)
+Completed 200 OK in 168ms (Views: 167.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:37:07 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 63ms (Views: 38.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 22:37:39 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (58.0ms)
+Completed 200 OK in 200ms (Views: 199.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:37:40 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 61ms (Views: 37.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 22:37:55 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (44.0ms)
+Completed 200 OK in 143ms (Views: 143.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:37:57 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 60ms (Views: 37.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 22:38:26 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 73ms (Views: 72.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:38:27 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 98ms (Views: 70.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 22:39:27 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 69ms (Views: 69.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:39:28 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 61ms (Views: 35.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 22:41:11 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 104ms (Views: 103.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 22:41:30 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (1.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 75ms (Views: 73.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:41:31 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (2.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 114ms (Views: 75.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:41:42 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (2.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 59ms (Views: 35.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:41:49 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 59ms (Views: 35.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:41:54 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 138ms (Views: 36.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 22:42:39 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 73ms (Views: 72.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:42:41 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 61ms (Views: 37.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 22:43:03 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 78ms (Views: 77.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:43:05 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (3.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 75ms (Views: 42.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 22:43:31 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (3.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (47.0ms)
+Completed 200 OK in 101ms (Views: 100.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:43:33 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (2.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 62ms (Views: 37.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:45:25 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 60ms (Views: 37.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 22:47:18 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 74ms (Views: 74.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:47:20 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 61ms (Views: 38.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:56:01 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 65ms (Views: 34.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:56:07 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 84ms (Views: 61.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:56:13 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 56ms (Views: 34.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 22:56:51 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 70ms (Views: 70.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:56:52 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (3.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 74ms (Views: 41.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 22:57:39 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (66.0ms)
+Completed 200 OK in 123ms (Views: 122.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:57:41 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (2.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 98ms (Views: 70.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:57:47 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 59ms (Views: 37.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 22:58:02 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (4.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 103ms (Views: 103.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:58:05 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 61ms (Views: 37.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:58:11 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (2.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 59ms (Views: 36.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:58:23 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 83ms (Views: 61.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:58:30 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 1
+Completed 200 OK in 62ms (Views: 38.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 22:59:13 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 90ms (Views: 89.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:59:17 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (2.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 12
+Completed 200 OK in 74ms (Views: 43.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 22:59:41 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 12
+Completed 200 OK in 60ms (Views: 37.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 23:01:11 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 70ms (Views: 70.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 23:01:13 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (2.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 12
+Completed 200 OK in 103ms (Views: 78.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 23:01:32 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (39.0ms)
+Completed 200 OK in 90ms (Views: 89.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 23:01:34 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (2.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (0.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 12
+Completed 200 OK in 96ms (Views: 38.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 23:01:50 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 12
+Completed 200 OK in 96ms (Views: 37.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 23:01:53 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 79ms (Views: 79.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 23:02:04 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (38.0ms)
+Completed 200 OK in 88ms (Views: 88.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 23:02:07 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 12
+Completed 200 OK in 63ms (Views: 38.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 23:02:30 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (1.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 105ms (Views: 104.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 23:02:32 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 12
+Completed 200 OK in 76ms (Views: 47.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 23:03:23 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (1.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 75ms (Views: 74.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 23:03:25 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (2.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 12
+Completed 200 OK in 144ms (Views: 118.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 23:03:45 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (2.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 96ms (Views: 96.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 23:03:47 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (1.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 12
+Completed 200 OK in 93ms (Views: 41.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-25 23:03:51 -0400
+  Processing by PagesController#home as HTML
+Rendered layouts/_header.html.erb (1.0ms)
+Rendered layouts/_footer.html.erb (0.0ms)
+Rendered pages/home.html.erb within layouts/application (37.0ms)
+Completed 200 OK in 114ms (Views: 113.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/logos.json" for 127.0.0.1 at 2011-10-25 23:03:54 -0400
+  Processing by LogosController#index as JSON
+  [1m[36mLogo Load (2.0ms)[0m  [1mSELECT "logos".* FROM "logos"[0m
+  [1m[35mLogo Load (1.0ms)[0m  SELECT "logos".* FROM "logos" ORDER BY random() LIMIT 12
+Completed 200 OK in 64ms (Views: 38.0ms | ActiveRecord: 3.0ms)
