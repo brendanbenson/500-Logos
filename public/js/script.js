@@ -95,7 +95,7 @@ $(document).ready(function() {
 		},
 		
 		showanswer: function() {
-			$('#choices').html('<p id="next">Next Question</p>');
+			$('#choices').html('<br /><br /><p id="next">Next Question</p>');
 			$('#choices').fadeIn(300);
 			var correct = new Image();
 			$(correct)
@@ -162,7 +162,7 @@ $(document).ready(function() {
 					.error(function() {
 						//alert("Image load error. Please refresh the page.")
 					})
-					.attr('src', 'img/logos/' + QUIZ.question.urllarge)
+					.attr('src', 'img/logos/' + QUIZ.question.urlsmall)
 					.attr('class', 'logoimg');
 			});
 		},
