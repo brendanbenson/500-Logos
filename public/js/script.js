@@ -1,6 +1,4 @@
 /* Author: Brendan Benson
-	
-TODO: Reorder the events so that the choices do not display until the image displays
 
 */
 
