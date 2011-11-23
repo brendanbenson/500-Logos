@@ -1,6 +1,6 @@
 /* Author: Brendan Benson
-	
-TODO: Reorder the events so that the choices do not display until the image displays
+
+Main JS for 500logos.com.
 
 */
 
@@ -21,6 +21,8 @@ $(document).ready(function() {
 		interval: null,
 		
 		reftime: null,
+		
+		mainimage: null,
 		
 		load: function(url) {
 			this.questions = null;
@@ -97,8 +99,8 @@ $(document).ready(function() {
 		showanswer: function() {
 			$('#choices').html('<br /><br /><p id="next">Next Question</p>');
 			$('#choices').fadeIn(300);
-			var correct = new Image();
-			$(correct)
+			this.mainimage = new Image();
+			$(this.mainimage)
 				.load(function() {
 					$('#logo').html('');
 					$('#logo').append(this);
@@ -111,7 +113,6 @@ $(document).ready(function() {
 				.attr('class', 'logoimg');
 			$('#next').click(function() {
 				if (QUIZ.cur < QUIZ.questions.length) {
-					correct = null;
 					QUIZ.buildquestion();
 				} else {
 					QUIZ.endquiz();
@@ -150,8 +151,8 @@ $(document).ready(function() {
 		
 		loadimages: function() {
 			$('#logo').fadeOut(300, function() {		
-				var large = new Image();
-				$(large)
+				QUIZ.mainimage = new Image();
+				$(QUIZ.mainimage)
 					.load(function() {
 						$('#logo').html('');
 						$('#logo').append(this);
@@ -206,7 +207,7 @@ $(document).ready(function() {
 				});
 			});
 			$('#logowrapper').addClass("loading");
-		}
+		},
 	};
 	
 	$('#start').click(function() {
