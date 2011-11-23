@@ -111,6 +111,7 @@ $(document).ready(function() {
 				.attr('class', 'logoimg');
 			$('#next').click(function() {
 				if (QUIZ.cur < QUIZ.questions.length) {
+					correct = null;
 					QUIZ.buildquestion();
 				} else {
 					QUIZ.endquiz();
@@ -148,7 +149,7 @@ $(document).ready(function() {
 		},
 		
 		loadimages: function() {
-			$('#logo').fadeOut(300, function() {			
+			$('#logo').fadeOut(300, function() {		
 				var large = new Image();
 				$(large)
 					.load(function() {
@@ -205,14 +206,7 @@ $(document).ready(function() {
 				});
 			});
 			$('#logowrapper').addClass("loading");
-			
-			//this.mdd = hex_md5(this.score + sqts);
-			//this.sendscore();
-		},
-		
-		promptname: function() {
-			
-		},
+		}
 	};
 	
 	$('#start').click(function() {
