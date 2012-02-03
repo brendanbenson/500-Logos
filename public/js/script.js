@@ -1,4 +1,5 @@
 /* Author: Brendan Benson
+<<<<<<< HEAD
 
 Main JS for 500logos.com.
 
