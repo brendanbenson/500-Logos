@@ -1,4 +1,8 @@
+require 'digest/md5'
+
 class LogosController < ApplicationController
+  
+  before_filter :authenticate, :except => [:index]
   
   # GET /logos
   # GET /logos.xml
@@ -6,8 +10,7 @@ class LogosController < ApplicationController
     @logos = Logo.all
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @logos }
+      format.html { authenticate } # index.html.erb
       format.json { render :json => Logo.find(:all, :limit => 12, :order => 'random()') }
     end
   end
@@ -19,7 +22,6 @@ class LogosController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @logo }
     end
   end
 
@@ -30,7 +32,6 @@ class LogosController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @logo }
     end
   end
 
@@ -47,10 +48,8 @@ class LogosController < ApplicationController
     respond_to do |format|
       if @logo.save
         format.html { redirect_to(@logo, :notice => 'Logo was successfully created.') }
-        format.xml  { render :xml => @logo, :status => :created, :location => @logo }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @logo.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -63,10 +62,8 @@ class LogosController < ApplicationController
     respond_to do |format|
       if @logo.update_attributes(params[:logo])
         format.html { redirect_to(@logo, :notice => 'Logo was successfully updated.') }
-        format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @logo.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -79,7 +76,15 @@ class LogosController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(logos_url) }
-      format.xml  { head :ok }
     end
   end
+  
+  protected
+  
+  def authenticate
+    authenticate_or_request_with_http_basic do |username, password|
+       true if Digest::MD5.hexdigest(username) == "325f37b52ddf61726310df64dfc5c0ec" and Digest::MD5.hexdigest(password) == "ca0ae75110d625f6a93ba9c003f8f147"
+     end
+  end
+  
 end
