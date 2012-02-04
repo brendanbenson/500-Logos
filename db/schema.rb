@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111006014201) do
+ActiveRecord::Schema.define(:version => 20120203185837) do
 
   create_table "logos", :force => true do |t|
     t.string   "urlsmall"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(:version => 20111006014201) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "mdd"
+  end
+
+  create_table "suggestions", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "logo"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
