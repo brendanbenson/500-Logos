@@ -5,7 +5,6 @@ class LogosController < ApplicationController
   before_filter :authenticate, :except => [:index]
   
   # GET /logos
-  # GET /logos.xml
   def index
     @logos = Logo.all
 
@@ -16,7 +15,6 @@ class LogosController < ApplicationController
   end
 
   # GET /logos/1
-  # GET /logos/1.xml
   def show
     @logo = Logo.find(params[:id])
 
@@ -26,7 +24,6 @@ class LogosController < ApplicationController
   end
 
   # GET /logos/new
-  # GET /logos/new.xml
   def new
     @logo = Logo.new
 
@@ -41,7 +38,6 @@ class LogosController < ApplicationController
   end
 
   # POST /logos
-  # POST /logos.xml
   def create
     @logo = Logo.new(params[:logo])
 
@@ -55,7 +51,6 @@ class LogosController < ApplicationController
   end
 
   # PUT /logos/1
-  # PUT /logos/1.xml
   def update
     @logo = Logo.find(params[:id])
 
@@ -69,7 +64,6 @@ class LogosController < ApplicationController
   end
 
   # DELETE /logos/1
-  # DELETE /logos/1.xml
   def destroy
     @logo = Logo.find(params[:id])
     @logo.destroy

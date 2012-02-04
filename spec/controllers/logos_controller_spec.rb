@@ -26,4 +26,14 @@ describe LogosController do
       response.should be_success
     end
   end
+  
+  # describe "GET 'show'" do
+    # before :each do
+      # http_login
+    # end
+    # it "should be successful when authenticated" do
+      # get :show, :id => 1
+      # response.should be_success
+    # end
+  # end
 end
