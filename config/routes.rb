@@ -1,8 +1,4 @@
 Logoquiz::Application.routes.draw do
-  
-  match "scores/topscores", :controller => 'scores', :action => 'topscores'
-  
-  resources :scores
 
   resources :logos
   
