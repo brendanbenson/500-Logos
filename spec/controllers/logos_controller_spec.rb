@@ -27,6 +27,7 @@ describe LogosController do
     end
   end
   
+  # TODO: Create a helper method to make fake data for the show test (low importance, since show is an admin action)
   # describe "GET 'show'" do
     # before :each do
       # http_login

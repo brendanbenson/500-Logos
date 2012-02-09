@@ -9,6 +9,7 @@ class LogosController < ApplicationController
     @logos = Logo.all
 
     respond_to do |format|
+      # Only authenticate for html format, not json format
       format.html { authenticate } # index.html.erb
       format.json { render :json => Logo.find(:all, :limit => 12, :order => 'random()') }
     end
