@@ -2,7 +2,7 @@ require 'digest/md5'
 
 class LogosController < ApplicationController
   
-  before_filter :authenticate_user!, :except => [:index]
+  before_filter :authenticate_user!
   
   # GET /logos
   def index
@@ -10,7 +10,7 @@ class LogosController < ApplicationController
 
     respond_to do |format|
       # Only authenticate for html format, not json format
-      format.html { authenticate } # index.html.erb
+      format.html { :authenticate_user! } # index.html.erb
       format.json { render :json => Logo.find(:all, :limit => 12, :order => 'random()') }
     end
   end
