@@ -2,7 +2,7 @@ require 'digest/md5'
 
 class LogosController < ApplicationController
   
-  before_filter :authenticate, :except => [:index]
+  before_filter :authenticate_user!, :except => [:index]
   
   # GET /logos
   def index

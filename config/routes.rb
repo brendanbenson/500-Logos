@@ -1,5 +1,7 @@
 Logoquiz::Application.routes.draw do
 
+  devise_for :users
+
   resources :logos
   
   root :to => 'pages#home'
