@@ -1,3 +1,3 @@
 class Suggestion < ActiveRecord::Base
-  validates :email, :name, :logo, :image, :presence => true
+  validates :email, :name, :logo, :presence => true
 end

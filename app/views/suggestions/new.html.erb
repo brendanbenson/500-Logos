@@ -1,0 +1,14 @@
+<div id="content">
+<%= form_for(@suggestion) do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %><br />
+    
+<%= f.label :email %>
+<%= f.text_field :email %><br />
+
+<%= f.label :logo %>
+<%= f.text_field :logo %><br />
+    
+<%=  f.submit %>
+<% end %>
+</div>
