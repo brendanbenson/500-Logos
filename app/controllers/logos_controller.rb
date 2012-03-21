@@ -76,13 +76,4 @@ class LogosController < ApplicationController
       format.html { redirect_to(logos_url) }
     end
   end
-  
-  protected
-  
-  def authenticate
-    authenticate_or_request_with_http_basic do |username, password|
-       true if Digest::MD5.hexdigest(username) == "325f37b52ddf61726310df64dfc5c0ec" and Digest::MD5.hexdigest(password) == "ca0ae75110d625f6a93ba9c003f8f147"
-     end
-  end
-  
 end
