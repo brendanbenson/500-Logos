@@ -2,15 +2,18 @@ require 'digest/md5'
 
 class LogosController < ApplicationController
   
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => :play
   
   # GET /logos
   def index
-    @logos = Logo.all
-
     respond_to do |format|
-      # Only authenticate for html format, not json format
-      format.html { :authenticate_user! } # index.html.erb
+      format.html { @logos = Logo.all }
+    end
+  end
+
+  # GET /logos/play
+  def play
+    respond_to do |format|
       format.json { render :json => Logo.all(:limit => 12, :order => 'random()') }
     end
   end

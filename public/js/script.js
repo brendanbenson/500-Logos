@@ -204,7 +204,7 @@ $(document).ready(function() {
 				var playagain = '<div id="playagain">Play Again!</div>';
 				$('#choices').html('').append(playagain).fadeIn(300);
 				$('#playagain').click(function() {
-					QUIZ.load("logos.json");
+					QUIZ.load("logos/play.json");
 				});
 			});
 			$('#logowrapper').addClass("loading");
@@ -213,7 +213,7 @@ $(document).ready(function() {
 	
 	$('#start').click(function() {
 		$('#start').fadeOut();
-		QUIZ.load("logos.json");
+		QUIZ.load("logos/play.json");
 	});
 });
 
