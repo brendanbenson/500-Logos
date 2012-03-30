@@ -1,14 +1,15 @@
 <div id="content">
+  <h2>Suggest a Logo</h2>
 <%= form_for(@suggestion) do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %><br />
+<%= f.label :name, 'Your name' %>
+<%= f.text_field :name %><br /><br />
     
 <%= f.label :email %>
-<%= f.text_field :email %><br />
+<%= f.text_field :email %><br /><br />
 
-<%= f.label :logo %>
-<%= f.text_field :logo %><br />
+<%= f.label :logo, 'Link to logo' %>
+<%= f.text_field :logo %><br /><br />
     
-<%=  f.submit %>
+<%=  f.submit 'Submit' %>
 <% end %>
 </div>
