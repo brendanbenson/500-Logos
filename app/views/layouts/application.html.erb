@@ -30,8 +30,6 @@
       oauth      : true, // enable OAuth 2.0
       xfbml      : true  // parse XFBML
     });
-
-    // Additional initialization code here
   };
 
   // Load the SDK Asynchronously
@@ -50,12 +48,13 @@
 		<%= yield %>
 	</div>
     <footer>
-		<%= render 'layouts/footer' %>
+      <%=  render 'layouts/footer' %>
     </footer>
-    <%= 
+    <%=
     	#debug(params) if Rails.env.development? 
     %>
 </div> <!--! end of #container -->
+
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>

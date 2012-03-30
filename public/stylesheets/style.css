@@ -34,7 +34,7 @@ html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-
 
 body { margin: 0; font-size: 16px; line-height: 1.231; }
 
-body, button, input, select, textarea { font-family: sans-serif; color: #222; }
+body, button, input, select, textarea { font-family: "courier new", sans-serif; color: #222; }
 
 /* 
  * Remove text-shadow in selection highlight: h5bp.com/i
@@ -50,10 +50,12 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; }
    Links
    ========================================================================== */
 
-a { color: #333333; }
+a { color: #333333; text-decoration: none }
 a:visited { color: #333333; }
-a:hover { color: #999999; text-decoration: none; }
+a:hover { color: #fe57a1; text-decoration: none; }
 a:focus { outline: thin dotted; }
+
+#main a { color: #fe57a1; }
 
 /* Improve readability when focused and hovered in all browsers: h5bp.com/h */
 a:hover, a:active { outline: 0; }
@@ -215,34 +217,36 @@ td { vertical-align: top; }
    ========================================================================== */
 
 @font-face {
-    font-family: 'ChunkFiveRegular';
-    src: url('../fonts/Chunkfive-webfont.eot');
-    src: url('../fonts/Chunkfive-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Chunkfive-webfont.woff') format('woff'),
-         url('../fonts/Chunkfive-webfont.ttf') format('truetype'),
-         url('../fonts/Chunkfive-webfont.svg#ChunkFiveRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Londrina Sketch';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Londrina Sketch'), local('LondrinaSketch-Regular'), url('http://themes.googleusercontent.com/static/fonts/londrinasketch/v1/p7Ai06aT1Ycp_D2fyE3z6z0WCr4BXWfANofoahM5yqc.woff') format('woff');
+}
 
+@font-face {
+  font-family: 'Dosis';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Dosis SemiBold'), local('Dosis-SemiBold'), url('http://themes.googleusercontent.com/static/fonts/dosis/v1/f8qltGyj2S-SS_tsOHsjgXYhjbSpvc47ee6xR_80Hnw.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans Condensed';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Cond Light'), local('OpenSans-CondensedLight'), url('http://themes.googleusercontent.com/static/fonts/opensanscondensed/v6/gk5FxslNkTTHtojXrkp-xGAzD5WKQVN4wSyA0MYYi4rr7w4p9aSvGirXi6XmeXNA.woff') format('woff');
 }
 
 body {
 	background: url('../img/washi.png') top left repeat;
 }
 
-header h1 {
-	font: 60px/68px 'ChunkFiveRegular', Arial, sans-serif; 
-	letter-spacing: 2px; 
+header h1 a {
+    font-family: 'Londrina Sketch', Arial;
+    font-size: 72px;
 	color: #4079d5;
-	text-shadow: 2px 2px 2px #ffffff;
 	margin: 0 20px;
-}
-
-header h2 {
-	font: 16px Verdana, sans-serif; 
-	letter-spacing: 1px; 
-	color: #999999;
-	margin: 0 20px;
+    text-decoration: none;
 }
 
 header ul {
@@ -276,6 +280,10 @@ header ul {
 	margin: 0 0 -8px 17px;
 }
 
+#header {
+    float:right;
+}
+
 #container {
 	width: 900px;
 	margin: 20px auto;
@@ -285,12 +293,12 @@ header ul {
 	width: 800px;
 	margin: 20px auto;
 	background: #FFFFFF;
-	padding: 10px 30px;
+	padding: 10px 45px;
 	border: 1px solid #d9d9d9;;
 }
 
 #game {
-	height: 500px;
+	height: 530px;
 }
 
 .loading {
@@ -315,10 +323,12 @@ header ul {
 	border: 1px solid #FFFFFF;
 	font-size: 24px;
 	float: left;
+    font-family: 'courier new', monospace;
 }
 #score {
 	float: right;
 	font-size: 24px;
+    font-family: 'courier new', monospace;
 }
 
 .choice {
@@ -395,6 +405,10 @@ header ul {
 	text-align: center;
 	padding: 5px;
 	margin: 10px auto;
+}
+
+.addthis_toolbox {
+    float: right;
 }
 
 /* ==|== non-semantic helper classes ========================================
