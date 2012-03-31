@@ -411,6 +411,14 @@ header ul {
     float: right;
 }
 
+.error {
+    color: #F00;
+}
+
+.success {
+    color: #5E740B;
+}
+
 /* ==|== non-semantic helper classes ========================================
    Please define your styles before this section.
    ========================================================================== */

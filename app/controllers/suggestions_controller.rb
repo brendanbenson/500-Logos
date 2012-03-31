@@ -7,7 +7,7 @@ class SuggestionsController < ApplicationController
   end
 
   def new
-    @suggestion = Suggestion.new
+    @suggestion ||= Suggestion.new
   end
 
   def create
@@ -15,9 +15,10 @@ class SuggestionsController < ApplicationController
 
     if s.save
       flash[:success] = "Thank you for your suggestion!"
-      redirect_to :root
+      redirect_to new_suggestion_path
     else
       @suggestion = s
+      flash.now[:error] = "Please fill out all the fields."
       render :action => :new
     end
   end

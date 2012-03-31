@@ -45,6 +45,12 @@
 		<%= render 'layouts/header' %>
     </header>
     <div id="main" role="main">
+        <% if flash[:success] %>
+          <p class="success"><%= flash[:success] %></p>
+        <% end %>
+      <% if flash[:error] %>
+        <p class="error"><%= flash[:error] %></p>
+      <% end %>
 		<%= yield %>
 	</div>
     <footer>
