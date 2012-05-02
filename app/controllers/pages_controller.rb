@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   
   def home
-    @title = 'Home'
+    @title = 'Logo Quiz Game!'
   end
 
   def contact
