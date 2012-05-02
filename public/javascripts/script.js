@@ -98,8 +98,8 @@ $(document).ready(function() {
 		},
 		
 		showanswer: function() {
-            togo = QUIZ.cur - 1;
-            logos = togo == 1 ? ' logo' : ' logos';
+            var togo = QUIZ.questions.length - QUIZ.cur;
+            var logos = togo == 1 ? ' logo' : ' logos';
 			$('#choices').html('<br /><br /><p id="next">Next Question</p><br /><br /><p id="remaining">' + togo + logos + ' to go!</p>');
 			$('#choices').fadeIn(300);
 			this.mainimage = new Image();
