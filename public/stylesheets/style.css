@@ -371,16 +371,16 @@ header ul {
 }
 
 #scoreform {
-	width: 250px;
+	width: 350px;
 	margin: auto;
 	line-height: 20px;
 }
 
-#scoreform input {
-	float: right;
+#scoreform input, #scoreform label {
+    font-size: 20px;
 }
 
-#playagain, #next, #start, .bluebutton {
+#next, #start, #share, .bluebutton {
 	width: 187px;
 	margin: auto;
 	border: 1px solid #4079d5;
@@ -394,13 +394,19 @@ header ul {
 	text-shadow: 1px 1px 1px #333333;
 }
 
-#playagain:hover, #next:hover, #start:hover, .bluebutton:hover {
+#next:hover, #start:hover, .bluebutton:hover {
 	text-decoration: none;
 	border: 1px solid #234377;
 	text-shadow: 1px 1px 1px #151515;
 }
 
-#share {
+#remaining {
+    text-align: center;
+    width: 300px;
+    margin: auto;
+}
+
+#playagain {
 	width: 200px;
 	text-align: center;
 	padding: 5px;

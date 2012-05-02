@@ -98,7 +98,9 @@ $(document).ready(function() {
 		},
 		
 		showanswer: function() {
-			$('#choices').html('<br /><br /><p id="next">Next Question</p>');
+            togo = QUIZ.cur - 1;
+            logos = togo == 1 ? ' logo' : ' logos';
+			$('#choices').html('<br /><br /><p id="next">Next Question</p><br /><br /><p id="remaining">' + togo + logos + ' to go!</p>');
 			$('#choices').fadeIn(300);
 			this.mainimage = new Image();
 			$(this.mainimage)
@@ -173,20 +175,20 @@ $(document).ready(function() {
 		endquiz: function() {
 			$('#logo').fadeOut(300, function() {
 				$('#logo').html('');
-				$('#logo').append('<div id="topscores"><p><strong>Congratulations!</strong> Your time was <strong>' + QUIZ.formattime(QUIZ.score) + '</strong> seconds!</p><div id="scoreform"><label>Name: <input type="text" name="user" id="scoreuser" /></label><div class="clearfix" /><p id="share" class="choice"><img src="img/facebook.png" /> <strong>Share Your Score!</strong></p></div></div>')
+				$('#logo').append('<div id="topscores"><p><strong>Congratulations!</strong> Your score was <strong>' + QUIZ.formattime(QUIZ.score) + '</strong> seconds!</p><div id="scoreform"><table><tr><td><label for="scoreuser"><strong>Your Name:</strong></label></td><td><input type="text" name="user" id="scoreuser" /></td></tr></table><div class="clearfix" /><br /><p id="share" class="choice"><img src="../img/facebook.png" /> <strong>Submit Score!</strong></p></div></div>')
 					.fadeIn("slow");
 				$('#share').click(function() {
 					var username = $('#scoreuser').val();
 					if (username == '') {
 						username = 'I';
 					}
-					var desc = username + ' just finished the "500 Logos" game with a time of ' + QUIZ.score + ' seconds! See if you can top that!';
+					var desc = username + ' just finished the "500 Logos" game with a time of ' + QUIZ.formattime(QUIZ.score) + ' seconds! See if you can top that!';
 					FB.ui(
 					  {
 					    method: 'feed',
 					    name: '500 Logos',
 					    link: 'http://500logos.com/',
-					    picture: 'http://fbrell.com/f8.jpg',
+					    picture: 'http://500logos.com/img/500logos-small.png',
 					    caption: 'Test your knowledge of corporate logos!',
 					    description: desc
 					  },
@@ -201,7 +203,7 @@ $(document).ready(function() {
 				});
 			});
 			$('#choices').fadeOut(300, function() {
-				var playagain = '<div id="playagain">Play Again!</div>';
+				var playagain = '<div id="playagain" class="choice">Play Again!</div>';
 				$('#choices').html('').append(playagain).fadeIn(300);
 				$('#playagain').click(function() {
 					QUIZ.load("logos/play.json");
