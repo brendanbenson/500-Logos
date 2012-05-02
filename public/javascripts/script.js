@@ -100,7 +100,8 @@ $(document).ready(function() {
 		showanswer: function() {
             var togo = QUIZ.questions.length - QUIZ.cur;
             var logos = togo == 1 ? ' logo' : ' logos';
-			$('#choices').html('<br /><br /><p id="next">Next Question</p><br /><br /><p id="remaining">' + togo + logos + ' to go!</p>');
+            var next = togo == 0 ? 'Finish Game' : 'Next Question'
+			$('#choices').html('<br /><br /><p id="next">' + next + '</p><br /><br /><p id="remaining">' + togo + logos + ' to go!</p>');
 			$('#choices').fadeIn(300);
 			this.mainimage = new Image();
 			$(this.mainimage)
