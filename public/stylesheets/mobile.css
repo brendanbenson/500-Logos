@@ -244,7 +244,6 @@ html {
 body {
 	background: url('../img/washi.png') top left repeat;
     height: 100%;
-    border: 1px solid #F00;
 }
 
 header h1 a {

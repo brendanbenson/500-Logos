@@ -425,6 +425,25 @@ header ul {
     color: #5E740B;
 }
 
+@media screen and (max-device-width: 480px){
+/*--- Mobile CSS ---*/
+    html, body, #container, #main, #game {
+        height: 100%;
+    }
+
+    html, body, #container, #main {
+        width: 100%;
+    }
+
+    #game, #content, #container, #main {
+        margin: 0px;
+    }
+
+    h1 {
+        display: none;
+    }
+}
+
 /* ==|== non-semantic helper classes ========================================
    Please define your styles before this section.
    ========================================================================== */
