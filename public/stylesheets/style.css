@@ -428,14 +428,12 @@ header ul {
 @media screen and (max-device-width: 480px){
 /*--- Mobile CSS ---*/
     html, body, #container, #main, #game {
+        width: 100%;
         height: 100%;
     }
 
-    html, body, #container, #main {
-        width: 100%;
-    }
-
     #game, #content, #container, #main {
+        padding: 0px;
         margin: 0px;
     }
 
