@@ -1,3 +1,12 @@
 <div id="content">
-Hello world! - Suggestion#index
+<table>
+<% @suggestions.each do |suggestion| %>
+    <tr>
+      <td><%= suggestion.id %></td>
+      <td><%= suggestion.name %></td>
+      <td><%= suggestion.email %></td>
+      <td><%= suggestion.logo %></td>
+    </tr>
+<% end %>
+</table>
 </div>
