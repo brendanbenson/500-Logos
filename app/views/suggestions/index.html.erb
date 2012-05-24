@@ -1,5 +1,13 @@
 <div id="content">
 <table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Logo</th>
+    </tr>
+  </thead>
 <% @suggestions.each do |suggestion| %>
     <tr>
       <td><%= suggestion.id %></td>
