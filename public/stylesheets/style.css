@@ -446,7 +446,7 @@ header ul {
 
     #logo, #logowrapper {
         width: 480px;
-        height: 200px;
+        height: 150px;
         vertical-align: middle;
         display: table-cell;
         margin: 20px auto;
@@ -454,6 +454,7 @@ header ul {
 
     .logoimg {
         max-height: 100px;
+        max-width: 90%;
     }
 /*}*/
 
