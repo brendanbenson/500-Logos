@@ -426,7 +426,7 @@ header ul {
     color: #5E740B;
 }
 
-@media screen and (max-device-width: 480px){
+/*@media screen and (max-device-width: 480px){*/
 /*--- Mobile CSS ---*/
     html, body, #container, #main, #game {
         width: 100%;
@@ -445,13 +445,17 @@ header ul {
     }
 
     #logo, #logowrapper {
-        width: 900px;
-        height: 30%;
+        width: 480px;
+        height: 200px;
         vertical-align: middle;
         display: table-cell;
         margin: 20px auto;
     }
-}
+
+    .logoimg {
+        max-height: 100px;
+    }
+/*}*/
 
 /* ==|== non-semantic helper classes ========================================
    Please define your styles before this section.
