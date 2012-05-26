@@ -349,6 +349,7 @@ header ul {
 .logoimg {
 	display: block;
 	margin: auto;
+    max-height: 100%;
 }
 
 #topscores {

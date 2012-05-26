@@ -183,7 +183,7 @@ $(document).ready(function() {
 					if (username == '') {
 						username = 'I';
 					}
-					var desc = username + ' just finished the "500 Logos" game with a time of ' + QUIZ.formattime(QUIZ.score) + ' seconds! See if you can top that!';
+					var desc = username + ' just finished the "500 Logos" game with a time of ' + QUIZ.formattime(QUIZ.score) + ' seconds! Can you beat that?';
 					FB.ui(
 					  {
 					    method: 'feed',
