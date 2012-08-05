@@ -285,15 +285,15 @@ header ul {
 }
 
 #container {
-	width: 900px;
+	width: 728px;
 	margin: 20px auto;
 }
 
 #game, #content {
-	width: 800px;
-	margin: 20px auto;
+	width: 700px;
+	margin: 10px auto;
 	background: #FFFFFF;
-	padding: 10px 45px;
+	padding: 10px 14px;
 	border: 1px solid #d9d9d9;;
 }
 
@@ -310,7 +310,7 @@ header ul {
 	height: 270px;
 	vertical-align: middle;
 	display: table-cell;
-	margin: 20px auto;
+	margin: auto;
 }
 
 #choices, #choiceswrapper {
