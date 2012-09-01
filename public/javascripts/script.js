@@ -172,66 +172,91 @@ $(document).ready(function() {
 					.attr('class', 'logoimg');
 			});
 		},
+
+        rendertopscores: function() {
+            $('#scorelist').html("");
+            $('#scorelist').addClass("loading");
+            $.getJSON("/scores", function(data) {
+                $('#scorelist').removeClass("loading");
+                $('#scorelist').append("<table>");
+                for (var i = 0; i < data.length; i++) {
+                    $('#scorelist').append('<tr><td><strong>' + data[i].score.name + '</strong></td><td>' + QUIZ.formattime(parseInt(data[i].score.score)) + ' seconds</td></tr>');
+                }
+                $('#scorelist').append("</table>");
+                $('#scorelist').hide().fadeIn("slow");
+            });
+        },
+
+        submitscore: function(score) {
+            var score = {
+                "authenticity_token": AUTH_TOKEN,
+                "score": {
+                    "score": QUIZ.score,
+                    "score_hash": CryptoJS.MD5(String(QUIZ.score) + $('#scoreuser').val() + "7oj20gakgeKHuy79@89").toString(CryptoJS.enc.Base64),
+                    "name": $('#scoreuser').val()
+                }
+            }
+
+            $('#scoreform').fadeOut("slow");
+
+            $.post("/scores", score, function(data) {
+                QUIZ.rendertopscores();
+            }, "json");
+
+        },
+
+        shareonfb: function() {
+            var username = $('#scoreuser').val();
+            if (username == '') {
+                username = 'I';
+            }
+            var desc = username + ' just finished the "500 Logos" game with a time of ' + QUIZ.formattime(QUIZ.score) + ' seconds! Can you beat that?';
+            FB.ui(
+              {
+                method: 'feed',
+                name: '500 Logos',
+                link: 'http://500logos.com/',
+                picture: 'http://500logos.com/img/500logos-small.png',
+                caption: 'Test your knowledge of corporate logos!',
+                description: desc
+              },
+              function(response) {
+                if (response && response.post_id) {
+                  //alert('Post was published.');
+                } else {
+                  //alert('Post was not published.');
+                }
+              }
+            );
+        },
 		
 		endquiz: function() {
 			$('#logo').fadeOut(300, function() {
 				$('#logo').html('');
-				$('#logo').append('<div id="topscores"><p><strong>Congratulations!</strong> Your score was <strong>' + QUIZ.formattime(QUIZ.score) + '</strong> seconds!</p><div id="scoreform"><table><tr><td><label for="scoreuser"><strong>Your Name:</strong></label></td><td><input type="text" name="user" id="scoreuser" /></td></tr></table><div class="clearfix" /><br /><p id="share" class="choice"><img src="../img/facebook.png" /> <strong>Submit Score!</strong></p></div></div>')
+				$('#logo').append('<div id="topscores"><p><strong>Congratulations!</strong> Your score was <strong>' + QUIZ.formattime(QUIZ.score) + '</strong> seconds!</p><div id="scoreform"><table><tr><td><label for="scoreuser"><strong>Your Name:</strong></label></td><td><input type="text" name="user" id="scoreuser" /></td><td><div id="share" class="choice"><strong>Submit Score!</strong></div></td></tr></table></div></div><div id="scorelist"></div>')
 					.fadeIn("slow");
+
+                QUIZ.rendertopscores();
+
 				$('#share').click(function() {
-					var username = $('#scoreuser').val();
-					if (username == '') {
-						username = 'I';
-					}
-					var desc = username + ' just finished the "500 Logos" game with a time of ' + QUIZ.formattime(QUIZ.score) + ' seconds! Can you beat that?';
-					FB.ui(
-					  {
-					    method: 'feed',
-					    name: '500 Logos',
-					    link: 'http://500logos.com/',
-					    picture: 'http://500logos.com/img/500logos-small.png',
-					    caption: 'Test your knowledge of corporate logos!',
-					    description: desc
-					  },
-					  function(response) {
-					    if (response && response.post_id) {
-					      //alert('Post was published.');
-					    } else {
-					      //alert('Post was not published.');
-					    }
-					  }
-					);
+                    QUIZ.submitscore(score);
 				});
 			});
+
 			$('#choices').fadeOut(300, function() {
 				var playagain = '<div id="playagain" class="choice">Play Again!</div>';
 				$('#choices').html('').append(playagain).fadeIn(300);
 				$('#playagain').click(function() {
-					QUIZ.load("logos/play.json");
+					QUIZ.load("logos/play");
 				});
 			});
-			$('#logowrapper').addClass("loading");
-		},
+
+			$('#logowrapper').removeClass("loading");
+		}
 	};
 	
 	$('#start').click(function() {
 		$('#start').fadeOut();
-		QUIZ.load("logos/play.json");
+		QUIZ.load("logos/play");
 	});
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -14,7 +14,7 @@ class LogosController < ApplicationController
   # GET /logos/play
   def play
     respond_to do |format|
-      format.json { render :json => Logo.all(:limit => 12, :order => 'random()') }
+      format.json { render :json => Logo.all(:limit => 10, :order => 'random()') }
     end
   end
 
