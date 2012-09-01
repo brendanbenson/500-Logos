@@ -10,17 +10,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120303201354) do
+ActiveRecord::Schema.define(:version => 20120901183838) do
 
   create_table "logos", :force => true do |t|
-    t.string    "urlsmall"
-    t.string    "urllarge"
-    t.string    "correct"
-    t.string    "choice1"
-    t.string    "choice2"
-    t.string    "choice3"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
+    t.string   "urlsmall"
+    t.string   "urllarge"
+    t.string   "correct"
+    t.string   "choice1"
+    t.string   "choice2"
+    t.string   "choice3"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "scores", :force => true do |t|
+    t.integer  "score"
+    t.string   "name"
+    t.string   "score_hash"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "suggestions", :force => true do |t|
