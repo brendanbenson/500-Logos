@@ -4,6 +4,7 @@ Logoquiz::Application.routes.draw do
 
   match 'logos/play', :to => 'logos#play'
   resources :logos
+  resources :scores
   resources :suggestions
 
   root :to => 'pages#home'

@@ -303,6 +303,8 @@ header ul {
 
 .loading {
 	background: url('../img/ajax-loader.gif') center center no-repeat;
+    min-height: 20px;
+    min-width: 20px;
 }
 
 #logo, #logowrapper {
@@ -358,23 +360,20 @@ header ul {
 }
 
 #scorelist {
-	width: 300px;
-	margin: auto;
-}
-
-#scorelist table {
-	width: 300px;
+	margin: 15px auto auto auto;
+    width: 300px;
+    height: 179px;
 }
 
 #scorelist td, #scorelist th {
-	margin: 20px;
+    padding: 2px 5px;
 	border-bottom: 1px solid #d9d9d9;
 }
 
 #scoreform {
-	width: 350px;
-	margin: auto;
-	line-height: 20px;
+	width: 500px;
+	margin-left: 30px;
+	line-height: 27px;
 }
 
 #scoreform input, #scoreform label {
@@ -393,6 +392,11 @@ header ul {
 	background-color: #4989f1;
 	color: #ffffff;
 	text-shadow: 1px 1px 1px #333333;
+}
+
+#share {
+    width: 146px;
+    line-height: 8px;
 }
 
 #next:hover, #start:hover, .bluebutton:hover {
