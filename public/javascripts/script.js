@@ -233,22 +233,25 @@ $(document).ready(function() {
 		endquiz: function() {
 			$('#logo').fadeOut(300, function() {
 				$('#logo').html('');
-				$('#logo').append('<div id="topscores"><p><strong>Congratulations!</strong> Your score was <strong>' + QUIZ.formattime(QUIZ.score) + '</strong> seconds!</p><div id="scoreform"><table><tr><td><label for="scoreuser"><strong>Your Name:</strong></label></td><td><input type="text" name="user" id="scoreuser" /></td><td><div id="share" class="choice"><strong>Submit Score!</strong></div></td></tr></table></div></div><div id="scorelist"></div>')
+				$('#logo').append('<div id="topscores"><p><strong>Congratulations!</strong> Your score was <strong>' + QUIZ.formattime(QUIZ.score) + '</strong> seconds!</p><div id="scoreform"><table><tr><td><label for="scoreuser"><strong>Your Name:</strong></label></td><td><input type="text" name="user" id="scoreuser" /></td><td><div id="submit" class="choice"><strong>Submit Score!</strong></div></td></tr></table></div></div><div id="scorelist"></div>')
 					.fadeIn("slow");
 
                 QUIZ.rendertopscores();
 
-				$('#share').click(function() {
+				$('#submit').click(function() {
                     QUIZ.submitscore(score);
 				});
 			});
 
 			$('#choices').fadeOut(300, function() {
-				var playagain = '<div id="playagain" class="choice">Play Again!</div>';
+				var playagain = '<br/><div id="playagain" class="choice">Play Again!</div><p id="share" class="choice"><img src="img/facebook.png" /> <strong>Share on FB!</strong></p>';
 				$('#choices').html('').append(playagain).fadeIn(300);
 				$('#playagain').click(function() {
 					QUIZ.load("logos/play");
 				});
+                $('#share').click(function(){
+                   QUIZ.shareonfb();
+                });
 			});
 
 			$('#logowrapper').removeClass("loading");

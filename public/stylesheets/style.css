@@ -380,7 +380,7 @@ header ul {
     font-size: 20px;
 }
 
-#next, #start, #share, .bluebutton {
+#next, #start, #submit, #share, .bluebutton {
 	width: 187px;
 	margin: auto;
 	border: 1px solid #4079d5;
@@ -394,9 +394,13 @@ header ul {
 	text-shadow: 1px 1px 1px #333333;
 }
 
-#share {
+#submit {
     width: 146px;
     line-height: 8px;
+}
+
+#share {
+    width: 200px;
 }
 
 #next:hover, #start:hover, .bluebutton:hover {
