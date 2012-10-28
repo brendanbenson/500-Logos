@@ -247,7 +247,7 @@ $(document).ready(function() {
 				var playagain = '<br/><div id="playagain" class="choice">Play Again!</div><p id="share" class="choice"><img src="img/facebook.png" /> <strong>Share on FB!</strong></p>';
 				$('#choices').html('').append(playagain).fadeIn(300);
 				$('#playagain').click(function() {
-					QUIZ.load("logos/play");
+					window.location.reload();
 				});
                 $('#share').click(function(){
                    QUIZ.shareonfb();
