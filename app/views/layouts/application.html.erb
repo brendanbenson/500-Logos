@@ -1,4 +1,3 @@
-<% ad_version = 1 + rand(2) %>
 <!doctype html>
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
@@ -42,21 +41,6 @@
    }(document));
   </script>
 <div id="container">
-  <% if Rails.env.production? && ad_version == 1 %>
-  <div class="skyscraper" style="position:relative; left: -180px; height: 0px;">
-    <script type="text/javascript"><!--
-    google_ad_client = "ca-pub-7226236337376794";
-    /* 500 Logos Skyscraper */
-    google_ad_slot = "6761622799";
-    google_ad_width = 160;
-    google_ad_height = 600;
-    //-->
-    </script>
-    <script type="text/javascript"
-    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-    </script>
-  </div>
-  <% end %>
     <header>
 		<%= render 'layouts/header' %>
     </header>
@@ -67,7 +51,7 @@
       <% if flash[:error] %>
         <p class="error"><%= flash[:error] %></p>
       <% end %>
-      <% if Rails.env.production? && ad_version == 2 %>
+      <% if Rails.env.production? %>
           <script type="text/javascript"><!--
             google_ad_client = "ca-pub-7226236337376794";
             /* 500 Logos Leaderboard */
