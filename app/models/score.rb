@@ -11,6 +11,6 @@ class Score < ActiveRecord::Base
 
   def correct_hash
     errors.add(:score_hash, "is incorrect") if
-        Digest::MD5.hexdigest("#{score.to_s}#{name.to_s}7oj20gakgeKHuy79@89") != score_hash
+        Digest::MD5.hexdigest("#{score.to_s}#{name.tr(" ", "").to_s}7oj20gakgeKHuy79@89") != score_hash
   end
 end

@@ -192,7 +192,7 @@ $(document).ready(function() {
                 "authenticity_token": AUTH_TOKEN,
                 "score": {
                     "score": QUIZ.score,
-                    "score_hash": CryptoJS.MD5(String(QUIZ.score) + $('#scoreuser').val() + "7oj20gakgeKHuy79@89").toString(CryptoJS.enc.Base64),
+                    "score_hash": CryptoJS.MD5(String(QUIZ.score) + $('#scoreuser').val().replace(" ", "") + "7oj20gakgeKHuy79@89").toString(CryptoJS.enc.Base64),
                     "name": $('#scoreuser').val()
                 }
             }
