@@ -1,4 +1,4 @@
 desc "Reset scores"
 task :score_reset => :environment do
-  p Score.delete_all
+  p "#{Time.current} Deleted #{Score.delete_all} scores"
 end
