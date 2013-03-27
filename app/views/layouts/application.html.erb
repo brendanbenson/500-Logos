@@ -60,15 +60,21 @@
             google_ad_height = 90;
             //-->
           </script>
-          <script type="text/javascript"
-            src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-          </script>
+          <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
       <% end %>
       <%= yield %>
 	</div>
-    <footer>
-      <%=  render 'layouts/footer' %>
-    </footer>
+    <% if Rails.env.production? %>
+    <script type="text/javascript"><!--
+        google_ad_client = "ca-pub-7226236337376794";
+        /* 500 Logos Bottom */
+        google_ad_slot = "1979383830";
+        google_ad_width = 728;
+        google_ad_height = 90;
+        //-->
+    </script>
+    <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+    <% end %>
 </div> <!--! end of #container -->
 
 
