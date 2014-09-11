@@ -1,10 +1,3 @@
-/* Author: Brendan Benson
-<<<<<<< HEAD
-
-Main JS for 500logos.com.
-
-*/
-
 $(document).ready(function() {
 	
 	var QUIZ = {
@@ -205,31 +198,6 @@ $(document).ready(function() {
 
         },
 
-        shareonfb: function() {
-            var username = $('#scoreuser').val();
-            if (username == '') {
-                username = 'I';
-            }
-            var desc = username + ' just finished the "500 Logos" game with a time of ' + QUIZ.formattime(QUIZ.score) + ' seconds! Can you beat that?';
-            FB.ui(
-              {
-                method: 'feed',
-                name: '500 Logos',
-                link: 'http://500logos.com/',
-                picture: 'http://500logos.com/img/500logos-small.png',
-                caption: 'Test your knowledge of corporate logos!',
-                description: desc
-              },
-              function(response) {
-                if (response && response.post_id) {
-                  //alert('Post was published.');
-                } else {
-                  //alert('Post was not published.');
-                }
-              }
-            );
-        },
-		
 		endquiz: function() {
 			$('#logo').fadeOut(300, function() {
 				$('#logo').html('');
@@ -244,7 +212,7 @@ $(document).ready(function() {
 			});
 
 			$('#choices').fadeOut(300, function() {
-				var playagain = '<br/><div id="playagain" class="choice">Play Again!</div><p id="share" class="choice"><img src="img/facebook.png" /> <strong>Share on FB!</strong></p>';
+				var playagain = '<br/><div id="playagain" class="choice">Play Again!</div>';
 				$('#choices').html('').append(playagain).fadeIn(300);
 				$('#playagain').click(function() {
 					window.location.reload();

@@ -3,7 +3,7 @@ require 'digest'
 module ApplicationHelper 
   # Return a title on a per-page basis.
   def title
-    base_title = "500 Logos"
+    base_title = "LogoQuiz.net"
     if @title.nil?
       base_title
     else
