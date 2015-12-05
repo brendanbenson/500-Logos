@@ -1,8 +1,9 @@
 require 'csv'
+require 'open-uri'
 
 class Logo < ActiveRecord::Base
-  def self.import(filename)
-    CSV.foreach(filename, headers: true) do |line|
+  def self.import(file_url)
+    CSV.new(open(file_url), headers: true).each do |line|
       Logo.create!(line.to_hash)
     end
   end
