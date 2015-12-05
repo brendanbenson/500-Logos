@@ -1,6 +1,5 @@
 Logoquiz::Application.routes.draw do
 
-  devise_for :users
 
   match 'logos/play', :to => 'logos#play'
   resources :logos
