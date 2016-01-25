@@ -12,7 +12,9 @@ class ScoresController < ApplicationController
   end
 
   def index
-    @scores = Score.order(:score).limit(8)
+    @scores = Score.where("created_at > '#{24.hours.ago.iso8601}'")
+                  .order(:score)
+                  .limit(8)
 
     respond_to do |format|
       format.json{ render :json => @scores }
