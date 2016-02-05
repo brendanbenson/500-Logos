@@ -1,5 +1,8 @@
 class ScoresController < ApplicationController
   def create
+    # Delete scores older than 24 hours so I don't hit the Heroku row limit
+    Score.where("created_at < '#{24.hours.ago.iso8601}'").delete_all
+
     @score = Score.new(params[:score])
 
     respond_to do |format|
