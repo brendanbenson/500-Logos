@@ -1,3 +1,5 @@
+ruby "2.2.4"
+
 source 'http://rubygems.org'
 
 gem 'rails', '3.2.21'
