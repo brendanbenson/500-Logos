@@ -9,6 +9,8 @@ gem 'rails', '3.2.21'
 
 gem 'pg'
 
+gem 'rack-cors', :require => 'rack/cors'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
